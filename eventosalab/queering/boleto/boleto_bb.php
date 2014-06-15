@@ -112,9 +112,9 @@ $dadosboleto["agencia"] = "3603"; // Num da agencia, sem digito
 $dadosboleto["conta"] = "30184"; 	// Num da conta, sem digito
 //30184-1
 // DADOS PERSONALIZADOS - BANCO DO BRASIL
-$dadosboleto["convenio"] = "2100973";  // Num do convênio - REGRA: 6 ou 7 ou 8 dígitos
+$dadosboleto["convenio"] = "2100971";  // Num do convênio - REGRA: 6 ou 7 ou 8 dígitos
 //$dadosboleto["contrato"] = "999999"; // Num do seu contrato
-$dadosboleto["carteira"] = "17";
+$dadosboleto["carteira"] = "18";
 //17
 $dadosboleto["variacao_carteira"] = "-019";  // Variação da Carteira, com traço (opcional)
 

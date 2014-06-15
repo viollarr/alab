@@ -16,7 +16,7 @@ if (isset($_REQUEST['acao']) and (addslashes($_REQUEST['acao']) == "logout"))
 $_SESSION["id_evento"] = $id_evento;
 
 if (empty($_SESSION["id_evento"])) 
-	header("Location: http://www.alab.org.br/eventos/queering-paradigms-iv");
+	//header("Location: http://www.alab.org.br/eventos/queering-paradigms-iv");
 
 /* Comentado para evitar que alguém se cadastre acessando o enderço diretamente.
 if ($_POST["insert"] == "true"){
@@ -93,8 +93,8 @@ if ($_POST["insert"] == "true"){
 */
 
 /*BUSCA TODOS OS TIPOS DE PARTICIPANTE - Modalidade de inscrição*/
-$sql_tipo_participante = "SELECT * FROM ev_tipo_participante WHERE id_evento = {$_SESSION["id_evento"]} AND online='sim'";
-$qr_tipo_participante = mysql_query($sql_tipo_participante, $conexao) or die(mysql_error());
+//$sql_tipo_participante = "SELECT * FROM ev_tipo_participante WHERE id_evento = {$_SESSION["id_evento"]} AND online='sim'";
+//$qr_tipo_participante = mysql_query($sql_tipo_participante, $conexao) or die(mysql_error());
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

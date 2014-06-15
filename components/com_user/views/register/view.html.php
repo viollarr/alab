@@ -36,10 +36,13 @@ class UserViewRegister extends JView
 			JError::raiseError( 403, JText::_( 'Access Forbidden' ));
 			return;
 		}
-
 		$pathway  =& $mainframe->getPathway();
 		$document =& JFactory::getDocument();
 		$params	= &$mainframe->getParams();
+
+		//$document->addScript( '/alab/www/media/system/js/jquery.maskedinput-1.3.js' ); // usar localmente
+		//$document->addScript( '/media/system/js/jquery.maskedinput-1.3.js' ); // usar no servidor
+
 
 	 	// Page Title
 		$menus	= &JSite::getMenu();
@@ -58,13 +61,33 @@ class UserViewRegister extends JView
 		$document->setTitle( $params->get( 'page_title' ) );
 
 		$pathway->addItem( JText::_( 'New' ));
-
-		// Load the form validation behavior
+		
 		JHTML::_('behavior.formvalidation');
 
-		$user =& JFactory::getUser();
-		$this->assignRef('user', $user);
-		$this->assignRef('params',		$params);
+		
+		$db 		=& JFactory::getDBO();
+		
+		$user 		=& JFactory::getUser();
+
+		$query = 'SELECT cod_estados, nome, sigla FROM ev_estados ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$estados = $db->loadAssocList(); 
+		 
+		$query = 'SELECT cod_cidades, nome FROM ev_cidades WHERE estados_cod_estados = "'.$user->get('id_estado_res').'"  ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$cidades_res = $db->loadAssocList();
+
+		$query = 'SELECT cod_cidades, nome FROM ev_cidades WHERE estados_cod_estados = "'.$user->get('id_estado_prof').'"  ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$cidades_prof = $db->loadAssocList();
+
+		// Load the form validation behavior
+		
+		$this->assignRef('user', 			$user);
+		$this->assignRef('estados',			$estados);
+		$this->assignRef('cidades_res',		$cidades_res);	
+		$this->assignRef('cidades_prof',	$cidades_prof);	
+		$this->assignRef('params',			$params);
 		parent::display($tpl);
 	}
 }

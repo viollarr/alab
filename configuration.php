@@ -31,7 +31,7 @@ class JConfig {
 	var $ftp_pass = 'lucajo0102';
 	var $ftp_root = '';
 	var $dbtype = 'mysql';
-	var $host = 'mysql04.alab.org.br';
+	var $host = 'localhost';
 	var $user = 'alab13';
 	var $db = 'alab13';
 	var $dbprefix = 'jos_';

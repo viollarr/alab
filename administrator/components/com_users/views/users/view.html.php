@@ -154,7 +154,7 @@ class UsersViewUsers extends JView
 
 		// search filter
 		$lists['search']= $search;
-
+		
 		$this->assignRef('user',		JFactory::getUser());
 		$this->assignRef('lists',		$lists);
 		$this->assignRef('items',		$rows);

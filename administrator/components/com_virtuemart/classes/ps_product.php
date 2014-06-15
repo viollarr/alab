@@ -310,6 +310,7 @@ class vm_ps_product extends vmAbstractObject {
 		$fields = array ( 'vendor_id' => $vendor_id,
 						'product_parent_id' => vmRequest::getInt('product_parent_id'),
 						'product_sku' => vmGet($d,'product_sku'),
+						'product_anuidade' => vmGet($d,'product_anuidade'),
 						'product_name' => vmGet($d,'product_name'),
 						'product_desc' => vmRequest::getVar('product_desc', '', 'default', '', VMREQUEST_ALLOWHTML),
 						'product_s_desc' => vmRequest::getVar('product_s_desc', '', 'default', '', VMREQUEST_ALLOWHTML),
@@ -510,6 +511,7 @@ class vm_ps_product extends vmAbstractObject {
         // Insert into DB
 		$fields = array ( 'vendor_id' => $vendor_id,
 						'product_sku' => vmGet($d,'product_sku'),
+						'product_anuidade' => vmGet($d,'product_anuidade'),
 						'product_name' => vmGet($d,'product_name'),
 						'product_desc' => vmRequest::getVar('product_desc', '', 'default', '', VMREQUEST_ALLOWHTML),
 						'product_s_desc' => vmRequest::getVar('product_s_desc', '', 'default', '', VMREQUEST_ALLOWHTML),

@@ -32,7 +32,7 @@ var MooPrompt = box = new Class({
 		}
 		this.container = new Element('div').setProperty('class', 'cbContainer');
 		this.container.setStyles({
-			'position': 'absolute', 'visibility': 'hidden'
+			'position': 'absolute', 'visibility': 'hidden', 'z-index': '999'
 		}).injectInside(document.body);
 		
 		this.box = new Element('div').setProperty('class', 'cbBox');

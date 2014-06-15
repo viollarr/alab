@@ -193,6 +193,13 @@ $formObj->startForm( 'adminForm', 'enctype="multipart/form-data"');
 $tabs = new vmTabPanel(0, 1, "productform");
 $tabs->startPane("content-pane");
 $tabs->startTab( $info_label, "info-page");
+
+// Add pelo Victor
+
+$grupo_anos = new ps_DB;
+$sequencia_anos = "SELECT nome FROM #__anos ";
+$grupo_anos->query($sequencia_anos);
+
 ?>
 <table class="adminform">
 	<tr> 
@@ -249,6 +256,18 @@ $tabs->startTab( $info_label, "info-page");
         				<?php echo $VM_LANG->_('PHPSHOP_PRODUCT_FORM_MANUFACTURER') ?>:</div>
       				</td>
       				<td width="79%" ><?php ps_manufacturer::list_manufacturer(@$manufacturer_id);  ?></td>
+    			</tr>
+    			<tr class="row0"> 
+      				<td width="21%" >
+      					<div style="text-align:right;font-weight:bold;"><?php  echo $VM_LANG->_('PHPSHOP_PRODUCT_FORM_ANUIDADE') ?>:</div>
+      				</td>
+      				<td width="79%"> 
+                    	<select name="product_anuidade" class="inputbox">
+                        	<option <?php echo ($db->f("product_anuidade")=='Pleno') ? "selected=\"selected\"" : "" ?> value="Pleno">Pleno</option>
+                            <option <?php echo ($db->f("product_anuidade")=='Aluno') ? "selected=\"selected\"" : "" ?> value="Aluno">Aluno</option>
+                            <option <?php echo ($db->f("product_anuidade")=='Honorario') ? "selected=\"selected\"" : "" ?> value="Honorario">Honorario</option>
+                        </select>
+      				</td>
     			</tr>
     			<?php
     			if (!$product_parent_id) { 

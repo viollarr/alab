@@ -109,6 +109,10 @@ class UserModelReset extends JModel
 	 * @param	token	An md5 hashed randomly generated string
 	 * @return	bool	True on success/false on failure
 	 */
+	 
+	 
+
+	
 	function confirmReset($token, $username)
 	{
 		global $mainframe;
@@ -122,10 +126,11 @@ class UserModelReset extends JModel
 
 		$db	= &JFactory::getDBO();
 		$db->setQuery('SELECT id, activation FROM #__users WHERE block = 0 AND username = '.$db->Quote($username));
-
+		
 		$row = $db->loadObject();
-
+		
 		// Verify the token
+		// Erro tá aqui
 		if (!$row)
 		{
 			$this->setError(JText::_('INVALID_TOKEN'));
@@ -242,6 +247,8 @@ class UserModelReset extends JModel
 	 * @param	string	An md5 hashed randomly generated string
 	 * @return	bool	True on success/false on failure
 	 */
+
+		 
 	function _sendConfirmationMail($email, $token)
 	{
 		$config		= &JFactory::getConfig();
@@ -249,11 +256,17 @@ class UserModelReset extends JModel
 		$url		= JURI::base().'index.php?option=com_user&view=reset&layout=confirm';
 		$sitename	= $config->getValue('sitename');
 
+		$db			= &JFactory::getDBO();
+		$sql_query = "SELECT username FROM jos_users WHERE email = '".$email."' LIMIT 1";
+		$db->setQuery($sql_query);
+		$dados_usuario = $db->loadObject();
+		$nome_de_usuario = $dados_usuario->username;
+		
 		// Set the e-mail parameters
 		$from		= $config->getValue('mailfrom');
 		$fromname	= $config->getValue('fromname');
 		$subject	= JText::sprintf('PASSWORD_RESET_CONFIRMATION_EMAIL_TITLE', $sitename);
-		$body		= JText::sprintf('PASSWORD_RESET_CONFIRMATION_EMAIL_TEXT', $sitename, $token, $url);
+		$body		= JText::sprintf('PASSWORD_RESET_CONFIRMATION_EMAIL_TEXT', $sitename, $nome_de_usuario, $token, $url);
 
 		// Send the e-mail
 		if (!JUtility::sendMail($from, $fromname, $email, $subject, $body))

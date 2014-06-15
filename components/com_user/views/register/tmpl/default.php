@@ -1,6 +1,7 @@
 <?php // no direct access
 
-defined('_JEXEC') or die('Restricted access'); ?>
+defined('_JEXEC') or die('Restricted access');?>
+
 
 <script type="text/javascript">
 
@@ -15,15 +16,263 @@ defined('_JEXEC') or die('Restricted access'); ?>
 // -->
 
 </script>
+<script src="administrator/components/com_users/views/user/tmpl/jquery.maskedinput-1.3.js"></script>
 
+<script language="javascript" type="text/javascript">
+
+jQuery(document).ready(function() {
+	
+
+	jQuery("#cpf").mask("999.999.999-99");
+	jQuery("#data_nascimento").mask("99/99/9999");
+	//jQuery("#cep_res").mask("99999-999");
+	//jQuery("#cep_prof").mask("99999-999");
+
+	if(jQuery("#escolha2").is(":checked")){
+	   jQuery('#cpf_v').hide();
+	}
+	else if(jQuery("#escolha1").is(":checked")){
+	   jQuery('#passaporte_v').hide();
+	}
+	else{
+	   jQuery('#passaporte_v').hide();
+	   jQuery('#cpf_v').hide();
+	}
+	
+	jQuery('#escolha1').click(function(){
+		jQuery('#passaporte_v').hide();	
+		jQuery('#cpf_v').show();
+		jQuery("#cpf").focus();
+	});
+	jQuery('#escolha2').click(function(){
+		jQuery('#cpf_v').hide();	
+		jQuery('#passaporte_v').show();
+		jQuery("#Passport").focus();
+	});	
+
+// PARA  EXIBIR E OCULTAR OS TIPOS DE RESIDENCIAS  inputbox_user required
+	
+	if(jQuery("#escolha3").is(":checked")){
+		jQuery('#estrangeiro').hide();
+		jQuery('#estrangeiro1').hide();
+		jQuery('#estrangeiro2').hide();
+		jQuery('#estrangeiro3').hide();
+		jQuery('#id_estado_res').addClass("required");
+		jQuery('#id_cidade_res').addClass("required");
+
+	}
+	else if(jQuery("#escolha4").is(":checked")){
+		jQuery('#nacional').hide();
+		jQuery('#nacional1').hide();
+		jQuery('#nacional2').hide();
+		jQuery('#nacional3').hide();
+		jQuery('#estado_res').addClass("required");
+		jQuery('#cidade_res').addClass("required");
+	}
+	else{
+		jQuery('#estrangeiro').hide();
+		jQuery('#estrangeiro1').hide();
+		jQuery('#estrangeiro2').hide();
+		jQuery('#estrangeiro3').hide();
+		jQuery('#nacional').hide();
+		jQuery('#nacional1').hide();
+		jQuery('#nacional2').hide();
+		jQuery('#nacional3').hide();
+		jQuery('#id_estado_res').addClass("required");
+		jQuery('#id_cidade_res').addClass("required");
+		jQuery('#estado_res').addClass("required");
+		jQuery('#cidade_res').addClass("required");
+	}
+	
+	jQuery('#escolha3').click(function(){
+		jQuery('#estrangeiro').hide();
+		jQuery('#estrangeiro1').hide();
+		jQuery('#estrangeiro2').hide();
+		jQuery('#estrangeiro3').hide();
+		jQuery('#nacional').show();
+		jQuery('#nacional1').show();
+		jQuery('#nacional2').show();
+		jQuery('#nacional3').show();
+		jQuery('#tipo_residencia').removeAttr("class")
+		jQuery('#id_estado_res').addClass("required");
+		jQuery('#id_cidade_res').addClass("required");
+		jQuery('#estado_res').removeClass("required");
+		jQuery('#cidade_res').removeClass("required");
+	});
+	jQuery('#escolha4').click(function(){
+		jQuery('#nacional').hide();
+		jQuery('#nacional1').hide();
+		jQuery('#nacional2').hide();
+		jQuery('#nacional3').hide();
+		jQuery('#estrangeiro').show();
+		jQuery('#estrangeiro1').show();
+		jQuery('#estrangeiro2').show();
+		jQuery('#estrangeiro3').show();
+		jQuery('#tipo_residencia').removeAttr("class");
+		jQuery('#estado_res').addClass("required");
+		jQuery('#cidade_res').addClass("required");
+		jQuery('#id_estado_res').removeClass("required");
+		jQuery('#id_cidade_res').removeClass("required");
+	});	
+	
+ 
+jQuery(function(){
+	var idCidade = jQuery('#cidade_id_res').val();
+	jQuery('#id_estado_res').change(function(){
+		if( jQuery(this).val() ) {
+			jQuery('#id_cidade_res').hide();
+			jQuery('.carregando').show();
+			jQuery.getJSON('../../administrator/components/com_users/views/user/tmpl/cidades.php?search=',{cod_estados: jQuery(this).val(), ajax: 'true'}, function(j){
+				//var options = '<option value=""></option>';	
+				 var option = new Array();
+				for (var i = 0; i < j.length; i++) {
+					
+					option[i] = document.createElement('option');//criando o option
+								jQuery( option[i] ).attr( {value : j[i].cod_cidades, selected : ( idCidade == j[i].cod_cidades ) ? true : false } );//colocando o value no option
+								jQuery( option[i] ).append( j[i].nome );//colocando o 'label'
+								
+					//options += '<option value="' + j[i].cod_cidades + '" >' + j[i].nome + '</option>';
+				}	
+				jQuery('#id_cidade_res').html(option).show();
+				jQuery('.carregando').hide();
+			});
+		} else {
+			jQuery('#id_cidade_res').html('<option value="">-- Escolha um estado --</option>');
+		}
+	});
+});
+
+jQuery(function(){
+	var idCidade2 = jQuery('#cidade_id_prof').val();
+	jQuery('#id_estado_prof').change(function(){
+		if( jQuery(this).val() ) {
+			jQuery('#id_cidade_prof').hide();
+			jQuery('.carregando').show();
+			jQuery.getJSON('../../administrator/components/com_users/views/user/tmpl/cidades.php?search=',{cod_estados: jQuery(this).val(), ajax: 'true'}, function(j){
+				//var options = '<option value=""></option>';	
+				 var option = new Array();
+				for (var i = 0; i < j.length; i++) {
+					
+					option[i] = document.createElement('option');//criando o option
+								jQuery( option[i] ).attr( {value : j[i].cod_cidades, selected : ( idCidade2 == j[i].cod_cidades ) ? true : false } );//colocando o value no option
+								jQuery( option[i] ).append( j[i].nome );//colocando o 'label'
+								
+					//options += '<option value="' + j[i].cod_cidades + '" >' + j[i].nome + '</option>';
+				}	
+				jQuery('#id_cidade_prof').html(option).show();
+				jQuery('.carregando').hide();
+			});
+		} else {
+			jQuery('#id_cidade_prof').html('<option value="">-- Escolha um estado --</option>');
+		}
+	});
+});
+
+
+});
+
+function Passport_validate(){
+	if(jQuery("#Passport").val() == ""){
+		jQuery("#Passport").focus();
+		jQuery("#Passport").attr("class","required");
+	}
+	else{
+		jQuery("#Passport").removeAttr("class");
+		jQuery("#cpf").removeAttr("class");
+	}
+}
+function validar(obj) { // recebe um objeto
+    var s = (obj.value).replace(/\D/g,'');
+    var tam=(s).length; // removendo os caracteres não numéricos
+// se for CPF
+    if (tam==11 ){
+        if (!validaCPF(s)){ // chama a função que valida o CPF
+            obj.focus();
+			jQuery("#cpf").attr("class","required");
+			alert("'"+obj.value+"' Não é um CPF válido!" ); // se quiser mostrar o erro
+            //obj.select();  // se quiser selecionar o campo em questão
+            return false;
+        }
+        obj.value=s;    // se validou o CPF mascaramos corretamente
+		jQuery("#cpf").removeAttr("class");
+		jQuery("#Passport").removeAttr("class");
+        return true;
+    }
+	else{
+		obj.focus();
+		jQuery("#cpf").attr("class","required");
+        alert("'"+s+"' Não é do tipo CPF!" ); // tamanho inválido
+        return false;
+	}
+}
+// fim da funcao validar()
+// funcao que valida CPF
+// O algortimo de validao de CPF  baseado em clculos
+// para o dgito verificador (os dois ltimos)
+// No entrarei em detalhes de como funciona
+function validaCPF(s) {
+    var c = s.substr(0,9);
+    var dv = s.substr(9,2);
+    var d1 = 0;
+    for (var i=0; i<9; i++) {
+        d1 += c.charAt(i)*(10-i);
+     }
+    if (d1 == 0) return false;
+    d1 = 11 - (d1 % 11);
+    if (d1 > 9) d1 = 0;
+    if (dv.charAt(0) != d1){
+        return false;
+    }
+    d1 *= 2;
+    for (var i = 0; i < 9; i++)    {
+         d1 += c.charAt(i)*(11-i);
+    }
+    d1 = 11 - (d1 % 11);
+    if (d1 > 9) d1 = 0;
+    if (dv.charAt(1) != d1){
+        return false;
+    }
+    return true;
+}
+
+function nu(campo){
+	var digits="0123456789"
+	var campo_temp 
+	for (var i=0;i<campo.value.length;i++){
+		campo_temp=campo.value.substring(i,i+1) 
+		if (digits.indexOf(campo_temp)==-1){
+			campo.value = campo.value.substring(0,i);
+			break;
+		}
+	}
+}
+function ValidaEmail(){
+  var obj = eval("document.forms[0].email");
+  var txt = obj.value;
+  if ((txt.length != 0) && ((txt.indexOf("@") < 1) || (txt.indexOf('.') < 1))){
+    obj.focus();
+	alert('Email incorreto');
+  }
+}
+
+function Residencia(){
+	if((jQuery("#escolha3").is(":checked"))||(jQuery("#escolha4").is(":checked"))){
+		jQuery("#tipo_residencia").removeAttr("class");
+	}
+	else{
+		jQuery("#tipo_residencia").addClass("invalid");
+		alert("Selecione o Tipo de residência acima");
+		jQuery("#endereco_res").focus();
+	}
+}
+
+</script>
 
 
 <?php
 
 	if(isset($this->message)){
-
 		$this->display('message');
-
 	}
 
 ?>
@@ -112,24 +361,6 @@ defined('_JEXEC') or die('Restricted access'); ?>
 
 </tr>
 
-
-
-<tr>
-
-	<td >
-
-		<label id="CPFmsg" for="Passport">
-
-			<?php echo JText::_( 'Passport' ); ?>:		</label>	</td>
-
-	<td>
-
-		<input type="text" id="Passport" name="Passport" size="40" value="<?php echo $this->escape($this->user->get( 'Passport' ));?>" class="inputbox_user validate-username" maxlength="25" /> (somente para estrangeiros)	</td>
-
-</tr>
-
-
-
 <tr>
 
 	<td >
@@ -184,14 +415,24 @@ defined('_JEXEC') or die('Restricted access'); ?>
 
 <!-- NOVOS CAMPOS -->
 
-
-
 <tr>
-
+    <td class="key">
+        <label for="escolha">
+            <?php echo JText::_( 'Tipo de Documento' ); ?>
+        </label>
+    </td>
+    <td>
+        <input type="radio" name="tipo_documento" id="escolha1" value="1" <?php if($this->user->get('tipo_documento')==1){ echo 'checked="checked"'; } ?> />CPF&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="tipo_documento" id="escolha2" value="2" <?php if($this->user->get('tipo_documento')==2){ echo 'checked="checked"'; } ?> /> Passaporte
+    </td>
+</tr>
+<tr id="passaporte_v">
+	<td ><label id="CPFmsg" for="Passport"><?php echo JText::_( 'Passport' ); ?>:</label></td>
+	<td><input type="text" id="Passport" name="Passport" size="40" onblur="Passport_validate(this);" value="<?php echo $this->escape($this->user->get( 'Passport' ));?>" class="inputbox_user validate-username" maxlength="25" /> (somente para estrangeiros)</td>
+</tr>
+<tr id="cpf_v">
 	<td><label id="cpfmsg" for="cpf"><?php echo JText::_( 'CPF' ); ?>:</label>	</td>
-
-	<td><input type="text" id="cpf" name="cpf" size="13" value="<?php echo $this->escape($this->user->get( 'cpf' ));?>" class="inputbox_user" maxlength="11" />	   (somente para residentes no Brasil)	</td>
-
+	<td><input type="text" id="cpf" name="cpf" size="13"  onblur="validar(this)" value="<?php echo $this->escape($this->user->get( 'cpf' ));?>" class="inputbox_use" maxlength="11" />	   (somente para residentes no Brasil)	</td>
 </tr>
 
 <tr>
@@ -228,7 +469,7 @@ defined('_JEXEC') or die('Restricted access'); ?>
 
   <td><label id="data_nascimentomsg" for="data_nascimento"><?php echo JText::_( 'Data Nascimento' ); ?>:</label></td>
 
-  <td><input class="inputbox_user required" name="data_nascimento" type="text" value="<?php echo $this->escape($this->user->get( 'data_nascimento' ));?>" size="10" maxlength="10" />     (dd/mm/aaaa)*</td>
+  <td><input class="inputbox_user required" name="data_nascimento" id="data_nascimento" type="text" value="<?php echo $this->escape($this->user->get( 'data_nascimento' ));?>" size="10" maxlength="10" />     (dd/mm/aaaa)*</td>
 
 </tr>
 
@@ -505,12 +746,22 @@ defined('_JEXEC') or die('Restricted access'); ?>
   <td>&nbsp;</td>
 
 </tr>
-
+<tr>
+    <td>
+        <label for="escolha" id="tipo_residencia">
+            <?php echo JText::_( 'Tipo de Residência' ); ?>
+        </label>
+    </td>
+    <td>
+        <input type="radio" class="inputbox_user" name="tipo_residencia" id="escolha3" value="1" <?php if($this->user->get('tipo_residencia')==1){ echo 'checked="checked"'; } ?> />Brasil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" class="inputbox_user" name="tipo_residencia" id="escolha4" value="2" <?php if($this->user->get('tipo_residencia')==2){ echo 'checked="checked"'; } ?> /> Outro país
+    </td>
+</tr>  
 <tr>
 
   <td><label id="endereco_resmsg" for="endereco_res"><?php echo JText::_( 'Endere&ccedil;o' ); ?>:</label></td>
 
-  <td><input class="inputbox_user required" name="endereco_res" type="text" id="endereco_res" value="<?php echo $this->escape($this->user->get( 'endereco_res' ));?>" size="50" maxlength="70" />
+  <td><input class="inputbox_user required" name="endereco_res" type="text" id="endereco_res" value="<?php echo $this->escape($this->user->get( 'endereco_res' ));?>" onblur="Residencia(this);" size="50" maxlength="70" />
 
     *</td>
 
@@ -536,26 +787,70 @@ defined('_JEXEC') or die('Restricted access'); ?>
 
 </tr>
 
-<tr>
+<tr id="nacional">
+    <td class="key"><label for="id_estado_res"><?php echo JText::_( 'Estado' ); ?></label></td>
+    <td>
+        <select class="inputbox_user" name="id_estado_res" id="id_estado_res">
+            <option value=""></option>
+            <?php
+				if($this->user->get('id') != 0){
+					if($this->user->get('id_estado_res') == ''){
+						echo "<script> alert('Atualize seus dados residênciais.');</script>";
+					}
+				}
+               foreach($this->estados AS $estado){
+                   if($this->user->get('id_estado_res') == $estado['cod_estados']){
+                       $select = 'selected="selected"';
+                   }
+                   else{
+                        $select = '';  
+                   }
+                    echo '<option uf="'.$estado['sigla'].'" value="'.$estado['cod_estados'].'" '.$select.'>'.$estado['nome'].'</option>';
+                }
+            ?>
+            </option>
+        </select>  *
+    </td>
+</tr>
+<tr id="nacional1">
+    <td><label for="id_cidade_res"><?php echo JText::_( 'Cidade' ); ?></label></td>
+    <td>
+        <input type="hidden" name="cidade_id_res" id="cidade_id_res" value="<?php echo $this->user->get('id_cidade_res');?>" />
+        <select class="inputbox_user" name="id_cidade_res" id="id_cidade_res">
+            <option value="">-- Escolha um estado --</option>
+            <?php
+            if ($this->user->get('id_cidade_res') != ""){
+               foreach($this->cidades_res AS $cidade){
+                   if($this->user->get('id_cidade_res') == $cidade['cod_cidades']){
+                       $select = 'selected="selected"';
+                   }
+                   else{
+                        $select = '';  
+                   }
+                    echo '<option value="'.$cidade['cod_cidades'].'" '.$select.'>'.$cidade['nome'].'</option>';
+                }
+            }
+            ?>
+            
+            
+        </select> *
+    </td>
+</tr>
+<tr id="estrangeiro">
 
   <td><label id="cidade_resmsg" for="cidade_res"><?php echo JText::_( 'Cidade' ); ?>:</label></td>
 
-  <td><input class="inputbox_user required" name="cidade_res" type="text" id="cidade_res" value="<?php echo $this->escape($this->user->get( 'cidade_res' ));?>" size="30" maxlength="50" />
-
-    *</td>
+  <td><input class="inputbox_user" name="cidade_res" type="text" id="cidade_res" value="<?php echo $this->escape($this->user->get( 'cidade_res' ));?>" size="30" maxlength="50" /> *</td>
 
 </tr>
 
-<tr>
+<tr id="estrangeiro1">
 
   <td><label id="estado_resmsg" for="estado_res"><?php echo JText::_( 'Estado' ); ?>:</label></td>
 
-  <td><input class="inputbox_user required" name="estado_res" type="text" id="estado_res" value="<?php echo $this->escape($this->user->get( 'estado_res' ));?>" size="30" maxlength="50" />
-
-    *</td>
+  <td><input class="inputbox_user" name="estado_res" type="text" id="estado_res" value="<?php echo $this->escape($this->user->get( 'estado_res' ));?>" size="30" maxlength="50" /> *</td>
 
 </tr>
-
 <tr>
 
   <td><label id="pais_resmsg" for="pais_res"><?php echo JText::_( 'Pa&iacute;s' ); ?>:</label></td>
@@ -649,23 +944,65 @@ defined('_JEXEC') or die('Restricted access'); ?>
   <td><input class="inputbox_user" name="bairro_prof" type="text" id="bairro_prof" value="<?php echo $this->escape($this->user->get( 'bairro_prof' ));?>" size="40" maxlength="50" /></td>
 
 </tr>
+<tr id="nacional2">
+    <td><label  for="estado_prof"><?php echo JText::_( 'Estado' ); ?></label></td>
+    <td>
+        <select class="inputbox_user" name="id_estado_prof" id="id_estado_prof">
+            <option value=""></option>
+            <?php
+               foreach($this->estados AS $estado){
+                   if($this->user->get('id_estado_prof') == $estado['cod_estados']){
+                       $select = 'selected="selected"';
+                   }
+                   else{
+                        $select = '';  
+                   }
+                    echo '<option uf="'.$estado['sigla'].'" value="'.$estado['cod_estados'].'" '.$select.'>'.$estado['nome'].'</option>';
+                }
+            ?>
+            </option>
+        </select>
+    </td>
+</tr>
+<tr id="nacional3">
+    <td><label for="cidade_prof"><?php echo JText::_( 'Cidade' ); ?></label></td>
+    <td>
+        <input type="hidden" name="cidade_id_prof" id="cidade_id_prof" value="<?php echo $this->user->get('id_cidade_prof');?>" />
+        <select class="inputbox_user" name="id_cidade_prof" id="id_cidade_prof">
+            <option value="">-- Escolha um estado --</option>
+            <?php
+            if ($this->user->get('id_cidade_prof') != ""){
+               foreach($this->cidades_prof AS $cidade){
+                   if($this->user->get('id_cidade_prof') == $cidade['cod_cidades']){
+                       $select = 'selected="selected"';
+                   }
+                   else{
+                        $select = '';  
+                   }
+                    echo '<option value="'.$cidade['cod_cidades'].'" '.$select.'>'.$cidade['nome'].'</option>';
+                }
+            }
+            ?>
+            
+            
+        </select>
+    </td>
+</tr>
+<tr id="estrangeiro2">
 
-<tr>
+  <td><label id="cidade_resmsg" for="cidade_res"><?php echo JText::_( 'Cidade' ); ?>:</label></td>
 
-  <td><label id="cidade_profmsg" for="cidade_prof"><?php echo JText::_( 'Cidade' ); ?>:</label></td>
-
-  <td><input class="inputbox_user" name="cidade_prof" type="text" id="cidade_prof" value="<?php echo $this->escape($this->user->get( 'cidade_prof' ));?>" size="30" maxlength="50" /></td>
+  <td><input class="inputbox_user" name="cidade_res" type="text" id="cidade_res" value="<?php echo $this->escape($this->user->get( 'cidade_prof' ));?>" size="30" maxlength="50" /></td>
 
 </tr>
 
-<tr>
+<tr id="estrangeiro3">
 
-  <td><label id="estado_profmsg" for="estado_prof"><?php echo JText::_( 'Estado' ); ?>:</label></td>
+  <td><label id="estado_resmsg" for="estado_res"><?php echo JText::_( 'Estado' ); ?>:</label></td>
 
-  <td><input class="inputbox_user" name="estado_prof" type="text" id="estado_prof" value="<?php echo $this->escape($this->user->get( 'estado_prof' ));?>" size="30" maxlength="50" /></td>
+  <td><input class="inputbox_user" name="estado_res" type="text" id="estado_res" value="<?php echo $this->escape($this->user->get( 'estado_prof' ));?>" size="30" maxlength="50" /></td>
 
 </tr>
-
 <tr>
 
   <td><label id="pais_profmsg" for="pais_prof"><?php echo JText::_( 'Pa&iacute;s' ); ?>:</label></td>
@@ -774,7 +1111,7 @@ defined('_JEXEC') or die('Restricted access'); ?>
 
 </table>
 
-  <button class="button validate" type="submit" ><?php echo JText::_('Register'); ?></button>
+  <button class="button validate" id="button_validador" type="submit" ><?php echo JText::_('Register'); ?></button>
 
 	<input type="hidden" name="task" value="register_save" />
 

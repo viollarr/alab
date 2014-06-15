@@ -343,6 +343,25 @@ class ctrl_avaliacao extends ctrl_generico{
 	* Retornos: true [aceito] ou false [recusado]
 	*/
 	function aceito($id_trabalho, $tipo){
+
+		// Este trecho é excepcional. Tiveram alguns trabalhos no QP4 (2012) que não foram avaliados a tempo mas foram apresentados.
+		// Assim, na hora de lançar as presenças, esses trabalhos não apareciam junto ao nome dos autores.
+		// Para os outros eventos esse trecho de código não será necessário. [Daniel Costa - 27/08/2012]
+		$trabalhos_excepcionais = array(
+			0 => array(
+					"id" => 1992,
+					"tipo" => "comunicacao_individual"
+				),
+			1 => array(
+					"id" => 1564,
+					"tipo" => "comunicacao_individual"
+				),
+		);
+		foreach($trabalhos_excepcionais as $excepcional){
+			if( ($excepcional['id'] == $id_trabalho) && ($excepcional['tipo'] == $tipo) ) return true;
+		}
+		// Fim do trecho excepcional.
+
 		$nota_corte = 3;
 		
 		if($tipo == 'resumo_em_coordenada'){
@@ -376,7 +395,7 @@ class ctrl_avaliacao extends ctrl_generico{
 		}
 		$respostas = array_count_values($notas);
 		$num_sim = $respostas['sim'];
-	
+		
 		if( $num_sim >= $nota_corte) return true;
 		else return false;
 	}//aceito

@@ -71,7 +71,7 @@ class PHPMailer
      * will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode.
      * @var string
      */
-    var $Sender            = "";
+    var $Sender            = "alab@alab.org.br";
 
     /**
      * Sets the Subject of the message.
@@ -436,7 +436,7 @@ class PHPMailer
                         $header, $params);
         }
         else
-            $rt = @mail($to, $this->EncodeHeader($this->Subject), $body, $header);
+            $rt = @mail($to, $this->EncodeHeader($this->Subject), $body, $header, "-r". $params);
 
         if (isset($old_from))
             ini_set("sendmail_from", $old_from);

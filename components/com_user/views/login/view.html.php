@@ -70,6 +70,7 @@ class UserViewLogin extends JView
 
 		if ( !$user->get('guest') )
 		{
+						
 			$title = JText::_( 'Logout');
 
 			// pathway item

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install method="upgrade" type="component" version="1.5.0">
+	<name>PhocaFavicon</name>
+	<creationDate>02/10/2008</creationDate>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<authorEmail>info@phoca.cz</authorEmail>
+	<authorUrl>www.phoca.cz</authorUrl>
+	<copyright>Jan Pavelka</copyright>
+	<license>GNU/GPL</license>
+	<!-- The version string is recorded in the components table -->
+	<version>1.0.1</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>Phoca Favicon</description>
+
+	<!-- Custom Install Script to execute -->
+	<installfile>install.phocafavicon.php</installfile>
+
+	<!-- Custom Uninstall Script to execute -->
+	<uninstallfile>uninstall.phocafavicon.php</uninstallfile>
+
+	<!-- Language -->
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.com_phocafavicon.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.com_phocafavicon.menu.ini</language>
+	</languages>
+
+	<!-- Administration -->
+	<administration>
+		<menu img="components/com_phocafavicon/assets/images/icon-16-menu.png" link="option=com_phocafavicon">Phoca Favicon</menu>
+		<submenu>
+			<menu img="components/com_phocafavicon/assets/images/icon-16-control-panel.png" link="option=com_phocafavicon">Control Panel</menu>
+			<menu img="components/com_phocafavicon/assets/images/icon-16-menu-favicon.png" link="option=com_phocafavicon&amp;view=phocafavicon">Create Favicon</menu>
+			<menu img="components/com_phocafavicon/assets/images/icon-16-menu-info.png" link="option=com_phocafavicon&amp;view=phocafaviconin">Info</menu>
+		</submenu>
+
+		<!-- Administration Main File Copy Section -->
+		<files>
+			<filename>admin.phocafavicon.php</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>install.phocafavicon.php</filename>
+			<filename>phocafavicon.xml</filename>
+			<filename>uninstall.phocafavicon.php</filename>
+			<filename>assets/images/icon-16-control-panel.png</filename>
+			<filename>assets/images/icon-16-menu-favicon.png</filename>
+			<filename>assets/images/icon-16-menu-info.png</filename>
+			<filename>assets/images/icon-16-menu.png</filename>
+			<filename>assets/images/icon-48-favicon.png</filename>
+			<filename>assets/images/icon-48-info.png</filename>
+			<filename>assets/images/icon-48-phoca.png</filename>
+			<filename>assets/images/icon-folder-images.gif</filename>
+			<filename>assets/images/icon-folder-small.gif</filename>
+			<filename>assets/images/icon-image-small.gif</filename>
+			<filename>assets/images/icon-insert.gif</filename>
+			<filename>assets/images/icon-phoca-logo-seal.png</filename>
+			<filename>assets/images/icon-phoca-logo.png</filename>
+			<filename>assets/images/icon-up-small.gif</filename>
+			<filename>assets/images/icon-up.gif</filename>
+			<filename>assets/images/index.html</filename>
+			<filename>assets/images/install.png</filename>
+			<filename>assets/images/logo-phoca.png</filename>
+			<filename>assets/images/logo.png</filename>
+			<filename>assets/images/spacer.gif</filename>
+			<filename>assets/images/update.png</filename>
+			<filename>assets/images/upgrade.png</filename>
+			<filename>assets/index.html</filename>
+			<filename>assets/phocafavicon.css</filename>
+			<filename>assets/phocafaviconieall.css</filename>
+			<filename>controllers/index.html</filename>
+			<filename>controllers/phocafavicon.php</filename>
+			<filename>help/en-GB/css/help.css</filename>
+			<filename>help/en-GB/css/index.html</filename>
+			<filename>help/en-GB/index.html</filename>
+			<filename>help/en-GB/screen.phocafavicon.html</filename>
+			<filename>helpers/index.html</filename>
+			<filename>helpers/phocafavicon.php</filename>
+			<filename>helpers/phocafaviconcp.php</filename>
+			<filename>helpers/phocafaviconico.php</filename>
+			<filename>models/index.html</filename>
+			<filename>models/phocafavicon.php</filename>
+			<filename>models/phocafaviconi.php</filename>
+			<filename>views/index.html</filename>
+			<filename>views/phocafavicon/index.html</filename>
+			<filename>views/phocafavicon/tmpl/default.php</filename>
+			<filename>views/phocafavicon/tmpl/index.html</filename>
+			<filename>views/phocafavicon/view.html.php</filename>
+			<filename>views/phocafaviconcp/index.html</filename>
+			<filename>views/phocafaviconcp/tmpl/default.php</filename>
+			<filename>views/phocafaviconcp/tmpl/index.html</filename>
+			<filename>views/phocafaviconcp/view.html.php</filename>
+			<filename>views/phocafaviconi/index.html</filename>
+			<filename>views/phocafaviconi/tmpl/default.php</filename>
+			<filename>views/phocafaviconi/tmpl/default_folder.php</filename>
+			<filename>views/phocafaviconi/tmpl/default_image.php</filename>
+			<filename>views/phocafaviconi/tmpl/default_up.php</filename>
+			<filename>views/phocafaviconi/tmpl/index.html</filename>
+			<filename>views/phocafaviconi/view.html.php</filename>
+			<filename>views/phocafaviconin/index.html</filename>
+			<filename>views/phocafaviconin/tmpl/default.php</filename>
+			<filename>views/phocafaviconin/tmpl/index.html</filename>
+			<filename>views/phocafaviconin/view.html.php</filename>
+		</files>
+
+		<!-- Only Development - copy ./front, ./language, ./other to admin area -->
+		<files>
+			<filename>language/en-GB/en-GB.com_phocafavicon.ini</filename>
+			<filename>language/en-GB/en-GB.com_phocafavicon.menu.ini</filename>
+			<filename>other/install_xml.php</filename>
+		</files>
+
+		<!-- Language -->
+		<languages>
+			<language tag="en-GB">language/en-GB/en-GB.com_phocafavicon.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_phocafavicon.menu.ini</language>
+		</languages>
+
+	</administration>
+</install>

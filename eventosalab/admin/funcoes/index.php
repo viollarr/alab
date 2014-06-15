@@ -1,3 +1,3 @@
 <?php
-	header("Location: http://www.alab.org.br/eventosalab/admin/");
+	header("Location: red/alab/www/eventosalab/admin/");
 ?>

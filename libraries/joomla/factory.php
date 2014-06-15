@@ -229,6 +229,18 @@ class JFactory
 
 		return $instance;
 	}
+	
+	function &getAnuidade( )
+	{
+		static $instance;
+
+		if (!is_object($instance)) {
+			$instance = JFactory::_createAnuidade();
+		}
+
+		return $instance;
+	}
+
 
 	/**
 	 * Get a template object
@@ -533,6 +545,23 @@ class JFactory
 		$acl = new JAuthorization( $options );
 
 		return $acl;
+	}
+	
+	function &_createAnuidade()
+	{
+		//TODO :: take the authorization class out of the application package
+		jimport( 'joomla.user.authorization' );
+
+		$db =&  JFactory::getDBO();
+
+		$options = array(
+			'db'				=> &$db,
+			'db_table_prefix'	=> $db->getPrefix() . 'anos_',
+			'debug'				=> 0
+		);
+		$anuidade = new JAuthorization( $options );
+
+		return $anuidade;
 	}
 
 	/**

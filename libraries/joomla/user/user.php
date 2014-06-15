@@ -44,6 +44,12 @@ class JUser extends JObject
 	 * @var string
 	 */
 	var $username		= null;
+	
+	/**
+	 * The email
+	 * @var string
+	 */
+	var $tipo_documento	= null;
 
 	/**
 	 * The email
@@ -117,6 +123,32 @@ class JUser extends JObject
 	 */
 	var $params			= null;
 
+	/**
+	 * ID Estado Residencial
+	 * @var datetime
+	 */
+	var $tipo_residencia	= null;
+	 
+	var $id_estado_res	= null;
+	var $estado_res	= null;
+	/**
+	 * ID Cidade Residencial
+	 * @var datetime
+	 */
+	var $id_cidade_res	= null;
+	var $cidade_res	= null;
+	/**
+	 * ID Estado Profissional
+	 * @var string activation hash
+	 */
+	var $id_estado_prof	= null;
+	var $estado_prof	= null;
+	/**
+	 * ID Cidade Profissional
+	 * @var string
+	 */
+	var $id_cidade_prof	= null;
+	var $cidade_prof	= null;
 	/**
 	 * Description
 	 * @var string integer
@@ -551,7 +583,13 @@ class JUser extends JObject
 
 		// Fire the onAftereStoreUser event
 		$dispatcher->trigger( 'onAfterStoreUser', array( $this->getProperties(), $isnew, $result, $this->getError() ) );
-
+		
+/*		$db =& JFactory::getDBO();
+		
+			$select_anuidade1 = "DELETE FROM #__anos_user WHERE id_user = '".(int) $this->id."'";
+			$db->setQuery($select_anuidade1);
+			$db->query();
+*/
 		return $result;
 	}
 

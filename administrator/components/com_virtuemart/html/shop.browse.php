@@ -447,6 +447,7 @@ else {
 		$products[$i]['product_price'] = $product_price;
 		$products[$i]['product_price_raw'] = $product_price_raw;
 		$products[$i]['product_sku'] = $db_browse->f("product_sku");
+		$products[$i]['product_anuidade'] = $db_browse->f("product_anuidade");
 		$products[$i]['product_weight'] = $db_browse->f("product_weight");
 		$products[$i]['product_weight_uom'] = $db_browse->f("product_weight_uom");
 		$products[$i]['product_length'] = $db_browse->f("product_length");

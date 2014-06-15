@@ -1,0 +1,57 @@
+/* TPPromospace */
+/* http://www.templateplazza.com */
+
+.clrfix {
+	clear: both;
+}
+#tppromospace {
+	border-bottom: 1px solid #333;
+	background: url(bg2.png);
+	margin: 0!important;
+	padding: 20px;
+	box-shadow: inset 0px -3px 10px #111;
+	color: #fff;
+	text-shadow: 0 -1px 0 #111!important;
+}
+	#tppromospace h1 {
+		font-size: 50px;
+	}
+	#tppromospace h2 {
+		font-size: 26px;
+	}
+	#tppromospace h3 {
+		font-size: 18px;
+	}
+	#tppromospace p {
+		font-size: 14px;
+		margin: 0!important;
+		padding: 0!important;			
+	}
+	#tppromospace a {
+		color: #FBB40F;
+		background-color: transparent!important;
+	}
+#button-show,
+#button-close {
+	display: block;
+	position: absolute!important;
+	top: 0!important;
+	right: 0!important;
+	color: #fff;
+	width: 32px;
+	height: 32px;
+	z-index: 10!important;
+	text-indent: -99999px;
+	cursor: pointer;
+	float: right;
+
+}
+#button-close {
+	background: url(../assets/btn-close.png) no-repeat;
+}
+#button-show {
+	background: url(../assets/btn-show.png) no-repeat;
+}
+#tppromospace a {
+	background-color: transparent!important;
+}

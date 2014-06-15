@@ -21,6 +21,10 @@
 					// query para saber o tipo de evento
 					$query = mysql_query("SELECT tipo_evento FROM jos_categories WHERE id = {$usuario["id_evento"]}");
 					$_SESSION["tipo_evento"] = mysql_result($query, 0);
+					
+					if( $_SESSION["id_evento_admin"] > 28){
+						header("Location: ../admin2012/controle.php");
+					}
 				}
 				
 				processa_requisicao();
@@ -53,9 +57,16 @@
 			//$GLOBALS["id_evento_admin"] = addslashes((int)$_GET["id_evento"]);
 			if(isset($_GET["id_evento_admin"])){
 				$_SESSION["id_evento_admin"] = addslashes((int)$_GET["id_evento_admin"]);
-				// query pra saber o tipo do evento
-				$query = mysql_query("SELECT tipo_evento FROM jos_categories WHERE id = {$_SESSION["id_evento_admin"]}");
-				$_SESSION["tipo_evento"] = mysql_result($query, 0);
+				if($id_evento_admin > 28){
+					
+					header("Location: ../admin2012/controle.php?id_evento_admin=".$_SESSION["id_evento_admin"]."");
+				}elseif($id_evento_admin == 0){
+					echo "<script>alert('Selecione o evento para poder prosseguir.')</script>";	
+				}else{
+					// query pra saber o tipo do evento
+					$query = mysql_query("SELECT tipo_evento FROM jos_categories WHERE id = {$_SESSION["id_evento_admin"]}");
+					$_SESSION["tipo_evento"] = mysql_result($query, 0);
+				}
 			}
 			
 			$ctrl = addslashes($_GET["ctrl"]);

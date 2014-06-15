@@ -801,6 +801,7 @@ class UserController extends JController
 
 		// Get the input
 
+		$username = JRequest::getVar('username', null, 'post', 'alnum');
 		$token = JRequest::getVar('token', null, 'post', 'alnum');
 
 
@@ -813,7 +814,7 @@ class UserController extends JController
 
 		// Verify the token
 
-		if ($model->confirmReset($token) === false)
+		if ($model->confirmReset($token, $username) === false)
 
 		{
 

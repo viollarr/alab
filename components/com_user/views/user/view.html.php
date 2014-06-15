@@ -104,11 +104,30 @@ class UserViewUser extends JView
 		} else {
 			$params->set('page_title',	JText::_( 'Edit Your Details' ));
 		}
+
+		$db 		=& JFactory::getDBO();
+		
+
+		$query = 'SELECT cod_estados, nome, sigla FROM ev_estados ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$estados = $db->loadAssocList(); 
+		 
+		$query = 'SELECT cod_cidades, nome FROM ev_cidades WHERE estados_cod_estados = "'.$user->get('id_estado_res').'"  ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$cidades_res = $db->loadAssocList();
+
+		$query = 'SELECT cod_cidades, nome FROM ev_cidades WHERE estados_cod_estados = "'.$user->get('id_estado_prof').'"  ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$cidades_prof = $db->loadAssocList();
+		
 		$document	= &JFactory::getDocument();
 		$document->setTitle( $params->get( 'page_title' ) );
 
-		$this->assignRef('user'  , $user);
-		$this->assignRef('params', $params);
+		$this->assignRef('user'  , 			$user);
+		$this->assignRef('estados',			$estados);
+		$this->assignRef('cidades_res',		$cidades_res);	
+		$this->assignRef('cidades_prof',	$cidades_prof);	
+		$this->assignRef('params', 			$params);
 
 		parent::display($tpl);
 	}

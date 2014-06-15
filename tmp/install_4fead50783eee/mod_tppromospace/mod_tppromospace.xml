@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="1.7"
+	client="site"
+	method="upgrade">
+	<name>Promo Space</name>
+	<author>TemplatePlazza</author>
+	<creationDate>January 2011</creationDate>
+	<copyright>Copyright (C) 2005 - 2011 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>support@templateplazza.com</authorEmail>
+	<authorUrl>www.templateplazza.com</authorUrl>
+	<version>1.0</version>
+	<description>MOD_TPPROMOSPACE_XML_DESC</description>
+	<files>
+		<filename module="mod_tppromospace">mod_tppromospace.php</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>mod_tppromospace.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tppromospace.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tppromospace.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="loadJquery" type="radio" default="1" label="MOD_LOADJQUERY_LABEL" description="MOD_LOADJQUERY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+                <field name="position" type="moduleposition" label="Module Position" addfieldpath="/administrator/components/com_modules/models/fields" />
+				<field name="bgimage" type="media"
+					label="MOD_CUSTOM_FIELD_BACKGROUNDIMAGE_LABEL" description="MOD_BACKGROUNDIMAGE_FIELD_LOGO_DESC" />
+				<field
+					name="start_show"
+					type="radio"
+					default="1"
+					label="MOD_TPPROMOSPACE_FIRST_STATE"
+					description="MOD_TPPROMOSPACE_FIRST_STATE_DESC">
+					<option
+						value="0">MOD_TPPROMOSPACE_HIDE</option>
+					<option
+						value="1">MOD_TPPROMOSPACE_SHOW</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

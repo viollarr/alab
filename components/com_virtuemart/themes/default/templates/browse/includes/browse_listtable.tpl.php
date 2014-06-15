@@ -36,12 +36,12 @@ foreach( $products as $product ) {
 			$this->set( $attr, $val );
 		}
 		
-		$data[$row][] = '<a href="'.$product['product_flypage'].'" title="'.$product['product_name'].'">'.$product['product_name'].'</a>';
+		$data[$row][] = '<a href="'.$product['product_flypage'].'" id="'.$product['product_anuidade'].'" title="'.$product['product_name'].'">'.$product['product_name'].'</a>';
 		$data[$row][] = $product['product_sku'];
 		if( _SHOW_PRICES && $auth['show_prices'] ) {
 			$data[$row][] = $product['product_price'];
 		}
-		$data[$row][] = '<a href="'.$product['product_flypage'].'" title="'.$product['product_name'].'">'
+		$data[$row][] = '<a href="'.$product['product_flypage'].'" id="'.$product['product_anuidade'].'" title="'.$product['product_name'].'">'
 						. ps_product::image_tag( $product['product_thumb_image'] )
 						. '</a>';
 		$data[$row][] = $product['product_s_desc'];
@@ -49,7 +49,7 @@ foreach( $products as $product ) {
 			$data[$row][] = $product['form_addtocart'];
 		}
 		else {
-			$data[$row][] = '<a href="'.$product['product_flypage'].'" title="'.$product['product_name'].'">'
+			$data[$row][] = '<a href="'.$product['product_flypage'].'" id="'.$product['product_anuidade'].'" title="'.$product['product_name'].'">'
 							.	$product['product_details']
 							.	'</a>';
 		}

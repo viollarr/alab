@@ -54,6 +54,7 @@ $langvars = array (
 	'PHPSHOP_PRODUCT_FORM_DELETE_ITEM_MSG' => 'Tem certeza de que deseja deletar este item?',
 	'PHPSHOP_PRODUCT_FORM_MANUFACTURER' => 'Fabricante',
 	'PHPSHOP_PRODUCT_FORM_SKU' => 'Ref.',
+	'PHPSHOP_PRODUCT_FORM_ANUIDADE' => 'Tipo Anuidade',
 	'PHPSHOP_PRODUCT_FORM_NAME' => 'Nome',
 	'PHPSHOP_PRODUCT_FORM_CATEGORY' => 'Categoria',
 	'PHPSHOP_PRODUCT_FORM_AVAILABLE_DATE' => 'Disponível em',

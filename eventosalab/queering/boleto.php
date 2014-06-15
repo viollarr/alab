@@ -57,7 +57,8 @@
 		// Essa condição foi adicionada no dia 11/06/2012 [Daniel], pois o pessoal do Queering Paradigms 
 		// precisavam que somente o pagamento da inscrição de ouvintes fosse prolongado até o dia 10/07/2012 [editado no dia 18/06/2012: "até o dia 01/07/2012"].
 		// Como esse requisito - período de pagamento de inscrição diferenciado por tipo de usuário - não estava presente no escopo inicial, acrescentei esse if somente para este caso.
-		if( (date('Ymd') <= 20120701) && ($participante['id_tipo_participante'] == 13) && ($id_evento == 28)){
+		if( (date('Ymd') <= 20120701) && ($participante['id_tipo_participante'] == 13) && ($id_evento == 28) ){
+		//if( $id_participante == 2267 || $id_participante == 2401 ){ // Pode apagar.
 			$periodo_pagamento = TRUE;
 			//print"id chamada: ". $ch['id']."<br />";
 			$sql = "SELECT preco_reais FROM ev_chamada_tipo_participante WHERE id_chamada='".$ch['id']."' AND id_tipo_participante='".$participante['id_tipo_participante']."' ";

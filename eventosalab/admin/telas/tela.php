@@ -55,9 +55,19 @@
     </form>
 </div>
 <?php 
+	if ($_SESSION["superusuario"] == 1) {
+?>
+		<div style="float:right; position:relative;">
+			<form action="../admin2012/controle.php?ctrl=new_evento&acao=form" id="form_novo_evento" method="post">
+				<input type="hidden" name="new" value="true" />
+				<input type="submit" class="botao" value="Novo Evento" />
+			</form>
+		</div>
+<?php 
+	}
 $id_evento_selecionado = $GLOBALS["id_evento_admin"];
 
-require_once("conexao.php");
+//require_once("conexao.php");
 require_once("../conexao.php");
 
 //if ($_SESSION["id_evento_admin"] != 28) {
@@ -71,7 +81,7 @@ if ($_SESSION["superusuario"] == 1) {
 	?>
 	<div id="bx_select_eventos">
 		<form method="get" action="controle.php" id="form_select_eventos">
-			Evento: 
+			Evento:
 			  <select name="id_evento_admin" id="select_eventos" class="formulario">
 				<option value="">Selecione o Evento</option>
 				<option value="">------------------</option>
@@ -99,7 +109,9 @@ if(isset($id_evento_selecionado)){ ?>
 	/*margin:0 auto;*/
 }
 </style>
-
+<?php
+if(!empty($_SESSION["id_evento_admin"])){
+?>
 <div style="width:100%; height:30px; background:#CCCCCC; border-top: 1px solid #999999; border-bottom: 1px solid #999999;">
     <div style="width:1030px; padding-left:30px; margin:0 auto; height:30px; background:#CCCCCC; ">
         <ul id="opcoes_admin">
@@ -135,6 +147,10 @@ if(isset($id_evento_selecionado)){ ?>
     </div>
 </div>
 <hr style="clear:both" />
+<?php
+}
+if(!empty($_SESSION["id_evento_admin"])){
+?>
 <div id="content">
 	<?php if(isset($view)) { 
 		if($view!="mensagem"){ ?>
@@ -145,6 +161,8 @@ if(isset($id_evento_selecionado)){ ?>
 	}//if
     ?>
 </div>
-<?php }//if ?>
+<?php 
+}
+}//if ?>
 </body>
 </html>

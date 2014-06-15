@@ -74,7 +74,7 @@ class UsersViewUser extends JView
 
 		$myObjectID 	= $acl->get_object_id( 'users', $myuser->get('id'), 'ARO' );
 		$myGroups 		= $acl->get_object_groups( $myObjectID, 'ARO' );
-		$myGroupName 	= strtolower( $acl->get_group_name( $myGroups[0], 'ARO' ) );;
+		$myGroupName 	= strtolower( $acl->get_group_name( $myGroups[0], 'ARO' ) );
 
 		// ensure user can't add/edit group higher than themselves
 		/* NOTE : This check doesn't work commented out for the time being
@@ -130,11 +130,54 @@ class UsersViewUser extends JView
 
 		// build the html select list
 		$lists['sendEmail'] = JHTML::_('select.booleanlist',  'sendEmail', 'class="inputbox" size="1"', $user->get('sendEmail') );
+		
+		$query = 'SELECT cod_estados, nome, sigla FROM ev_estados ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$estados = $db->loadAssocList();  
+		
+		$query = 'SELECT cod_cidades, nome FROM ev_cidades WHERE estados_cod_estados = "'.$user->get('id_estado_res').'"  ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$cidades_res = $db->loadAssocList();
 
-		$this->assignRef('me', 		$me);
-		$this->assignRef('lists',	$lists);
-		$this->assignRef('user',	$user);
-		$this->assignRef('contact',	$contact);
+		$query = 'SELECT cod_cidades, nome FROM ev_cidades WHERE estados_cod_estados = "'.$user->get('id_estado_prof').'"  ORDER BY nome'; 
+		$db->setQuery( $query ); 
+		$cidades_prof = $db->loadAssocList();
+		
+		// Verificando se é inadimplente
+		
+		$ano1 = date("Y");
+		$ano2 = (date("Y")-1);
+		$ano3 = (date("Y")-2);
+		$select_inadimplente = "
+			SELECT 
+				a.nome  
+			FROM 
+				jos_anos_user au, 
+				jos_anos a 
+			WHERE 
+				(
+					a.nome = '".$ano1."' OR 
+					a.nome = '".$ano2."' OR 
+					a.nome = '".$ano3."'
+				) AND 
+				(
+					au.id_user = '".$user->get('id')."' AND 
+					a.id_ano = au.id_ano
+				)";
+				
+		$db->setQuery( $select_inadimplente );
+		$anos_inadimplente =$db->loadAssocList();
+		//var_dump($anos_inadimplente);
+				
+		
+		$this->assignRef('me', 				$me);
+		$this->assignRef('lists',			$lists);
+		$this->assignRef('estados',			$estados);
+		$this->assignRef('cidades_res',		$cidades_res);	
+		$this->assignRef('cidades_prof',	$cidades_prof);	
+		$this->assignRef('user',			$user);
+		$this->assignRef('inadimplente',	$anos_inadimplente);
+		$this->assignRef('contact',			$contact);
 
 		parent::display($tpl);
 	}

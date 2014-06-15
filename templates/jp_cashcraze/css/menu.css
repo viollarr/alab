@@ -1,0 +1,33 @@
+/************** Mainmenu Navigation styles **************/
+#right ul.menu li,#left ul.menu li{background:none!important;margin:0!important;padding:0!important;}
+#right ul.menu li a,#left ul.menu li a{display:block;border-bottom:1px solid #dadada;text-decoration:none;outline:none;color:#333;padding:4px 0;}
+#right ul.menu li a:hover,#right ul.menu li a:active,#right ul.menu li a:focus,#left ul.menu li a:hover,#left ul.menu li a:active,#left ul.menu li a:focus{color:#999;border-bottom:1px solid #dadada;text-decoration:none;background:#fff;}
+#right ul.menu li.active,#left ul.menu li.active{color:#000;text-decoration:none;font-weight:400;}
+#right ul.menu li.active a,#left ul.menu li.active a{color:#666!important;text-decoration:none;font-weight:400;}
+#right ul.menu li li,#left ul.menu li li{list-style:none;padding:0 0 0 10px !important;}
+#right ul.menu li li a,#left ul.menu li li a{font-size:92%;font-weight:400;background:url(../images/arrow.png) no-repeat left!important;padding-left:10px!important;border-bottom:1px solid #dadada;color:#666;}
+#right ul.menu li li a:hover,#right ul.menu li li a:active,#right ul.menu li li a:focus,#left ul.menu li li a:hover,#left ul.menu li li a:active,#left ul.menu li li a:focus{color:#fff;}
+#right ul.menu li.active a:hover,#left ul.menu li.active a:hover{color:#333!important;text-decoration:none;font-weight:400;border-bottom:1px solid #dadada;background:#fff;}
+#right ul.menu,#left ul.menu,#right ul.menu li ul,#left ul.menu li ul{list-style:none;margin:0;padding:0;}
+
+#left ul.menu li,#left ul.menu li{background:none!important;margin:0!important;padding:0!important;}
+#left ul.menu li a,#left ul.menu li a{display:block;border-bottom:1px solid #dadada;text-decoration:none;outline:none;color:#333;padding:4px 0;}
+#left ul.menu li a:hover,#left ul.menu li a:active,#left ul.menu li a:focus,#left ul.menu li a:hover,#left ul.menu li a:active,#left ul.menu li a:focus{color:#999;border-bottom:1px solid #dadada;text-decoration:none;background:#fff;}
+#left ul.menu li.active,#left ul.menu li.active{color:#000;text-decoration:none;font-weight:400;}
+#left ul.menu li.active a,#left ul.menu li.active a{color:#666!important;text-decoration:none;font-weight:400;}
+#left ul.menu li li,#left ul.menu li li{list-style:none;padding:0 0 0 10px !important;}
+#left ul.menu li li a,#left ul.menu li li a{font-size:92%;font-weight:400;background:url(../images/arrow.png) no-repeat left!important;padding-left:10px!important;border-bottom:1px solid #dadada;color:#666;}
+#left ul.menu li li a:hover,#left ul.menu li li a:active,#left ul.menu li li a:focus,#left ul.menu li li a:hover,#left ul.menu li li a:active,#left ul.menu li li a:focus{color:#fff;}
+#left ul.menu li.active a:hover,#left ul.menu li.active a:hover{color:#333!important;text-decoration:none;font-weight:400;border-bottom:1px solid #dadada;background:#fff;}
+#left ul.menu,#left ul.menu,#left ul.menu li ul,#left ul.menu li ul{list-style:none;margin:0;padding:0;}
+
+/************** Topmenu Navigation styles **************/
+.topmenu {position:relative; z-index:1000;}
+.topmenu ul{float:right;padding:0;margin:0;}
+.topmenu ul li {float:left;list-style: none;}
+.topmenu ul li a {color:#fff;text-decoration: none;display:block;}
+.topmenu ul li a:link, .topmenu ul li a:visited {color:#fff;text-decoration: none;display:block;padding:5px 10px;margin:0 0 0 1px; border-left:1px dotted #fff}
+.topmenu ul li a:hover {color:#ff9c00;}
+.topmenu ul li#current a:link, .topmenu ul li#current a:visited, .topmenu ul li.current a:link, .topmenu ul li.current a:visited {color:#ff9c00;}
+.topmenu ul li#current a:hover, .topmenu ul li.current a:hover, {color:#fff;}
+.topmenu ul li ul li a {background:none;}

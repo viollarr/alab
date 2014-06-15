@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="component" version="1.5">
+	<name>PagebreakPlus</name>
+	<description>PagebreakPlus ... more options for pagebreak in Joomla!</description>
+	<version>0.1.0</version>
+	<creationDate>February 2010</creationDate>
+	<author>GeoXeo</author>
+	<authorEmail>contact@geoxeo.com</authorEmail>
+	<authorUrl>http://www.geoxeo.com</authorUrl>
+	<copyright>Copyright (C) 2010 GeoXeo All Rights Reserved</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<!-- Installation -->
+	<uninstallfile>uninstall.pagebreakplus.php</uninstallfile>
+	<uninstall>
+	<sql>
+		<file driver="mysql" charset="utf8">uninstall.pagebreakplus.sql</file>
+	</sql>
+	</uninstall>
+</install>

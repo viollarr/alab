@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.5//DTD plugin 1.0//EN" "http://www.joomla.org/xml/dtd/1.5/plugin-install.dtd">
+<install version="1.5" type="plugin" group="system">
+	<name>System - Embed Any Script by tushev.org</name>
+	<creationDate>November 2010</creationDate>
+	<author>Semyon Tushev</author>
+	<authorEmail>support@tushev.org</authorEmail>
+	<authorUrl>http://tushev.org</authorUrl>
+	<copyright>Copyright (c) S.Tushev, 2010. All rights reserved</copyright>
+	<license>GNU GPL v2.0</license>
+	<version>v 1.0</version>
+	<description>PLUGIN_DESC</description>
+	<files>
+		<filename plugin="embedanyscript">embedanyscript.php</filename>
+	</files>	
+	<languages folder="">
+		<language tag="en-GB">en-GB.plg_system_embedanyscript.ini</language>
+   	</languages>	
+	<params>
+		<param name="processarticles" type="radio" default="1" label="Process {embedscript}" description="Defines wheter it's necessary to look in articles or modules for {embedscript}some_path{/embedscript} sequence and process it.">
+		  <option value="0">No</option>
+		  <option value="1">Yes</option>
+		</param>
+		<param type="spacer" default="&lt;b&gt;Scripts to include:&lt;/b&gt;" />
+		<param name="list" type="textarea" default="" label="Path list" description="Put each script on a new line. You should use URI paths (i.e. /media/myscript.js or http://example.com/script.js)" rows="10" cols="30" />
+		<param type="spacer" default="(put each path on a new line)" />
+	</params>
+	<params group="advanced">
+		<param type="spacer" default="&lt;b&gt;Adminpanel mode&lt;/b&gt;" />
+		<param name="allowadmin" type="radio" default="0" label="Embed scripts to adminpanel" description="Defines wheter it's necessary to embed th scripts listed below to administrator panel. Please be careful, some scripts may conflict with mootools.">
+		  <option value="0">No</option>
+		  <option value="1">Yes</option>
+		</param>
+		<param name="adminlist" type="textarea" default="" label="Administrator mode path list" description="Please be careful, some scripts may conflict with mootools. Put each script on a new line. You should use URI paths (i.e. /media/myscript.js or http://example.com/script.js)" rows="10" cols="30" />
+	</params>
+</install>

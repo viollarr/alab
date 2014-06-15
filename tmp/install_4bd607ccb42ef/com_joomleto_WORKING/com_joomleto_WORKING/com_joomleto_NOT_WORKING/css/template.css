@@ -1,0 +1,75 @@
+
+body {
+	font-size: 11px;
+}
+
+/** cpanel settings **/
+
+#cpanel div.icon {
+	text-align: center;
+	margin-right: 5px;
+	float: left;
+	margin-bottom: 5px;
+}
+
+#cpanel div.icon a {
+	display: block;
+	float: left;
+	border: 1px solid #f0f0f0;
+	height: 97px;
+	width: 108px;
+	color: #666;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+#cpanel div.icon a:hover {
+	border-left: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #f9f9f9;
+	color: #0B55C4;
+}
+
+#cpanel img  { padding: 10px 0; margin: 0 auto; }
+#cpanel span { display: block; text-align: center; }
+
+fieldset.adminform { border: 1px solid #ccc; margin: 0 10px 10px 10px; }
+table.adminform td { padding: 3px; text-align: left; }
+table.adminform td.left{width:50%}
+table.adminform, div.adminform {
+	background-color: #f9f9f9;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	border-collapse: collapse;
+	margin: 8px 0 10px 0;
+	margin-bottom: 15px;
+	width: 100%;
+}
+.jbinputbox{display:block;width:200px}
+label{padding:5px 0 0 5px;font-weight:bolder}
+
+/* pane-sliders  */
+.pane-sliders .title {
+	margin: 0;
+	padding: 2px;
+	color: #666;
+	cursor: pointer;
+
+}
+
+.pane-sliders .panel   { border: 1px solid #ccc; margin-bottom: 3px;}
+
+.pane-sliders .panel h3 { background: #f6f6f6; color: #666}
+
+.pane-sliders .content { height: 0px; display: none; background: #f6f6f6;}
+
+.pane-sliders .adminlist     { border: 0 none; }
+.pane-sliders .adminlist td  { border: 0 none; }
+
+.moofx-toggler  span     { background: transparent url(../images/j_arrow.png) 5px 50% no-repeat; padding-left: 20px;}
+.moofx-toggler-down span { background-image: url(../images/j_arrow_down.png); }
+
+.moofx-toggler-down {  border-bottom: 1px solid #ccc; }
+

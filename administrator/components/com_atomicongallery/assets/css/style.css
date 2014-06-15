@@ -1,0 +1,79 @@
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.center {
+	text-align: center;
+}
+.clearfix {
+	clear: both;
+}
+
+.file_upload {
+	width: 100%;
+}
+.notice {
+	background-color: #FFDD80;
+	font-size: 120%;
+	font-weight: bold;
+	border: 1px solid #FF9900;
+}
+
+.up {
+    background: transparent url('../images/back16.png') no-repeat scroll top left;
+    padding-left: 25px;
+    height: 16px;
+}
+.folder {
+    background: transparent url('../images/folder16.png') no-repeat scroll top left;
+    padding-left: 25px;
+    height: 16px;
+}
+
+.icon-48-atomicon {
+    background-image: url(../images/icon-48-atomicon.png);
+}
+.icon-32-descriptions {
+	background-image: url(../images/icon-32-descriptions.png);
+}
+.icon-32-thumbnails {
+	background-image: url(../images/icon-32-thumbnails.png);
+}
+
+.adminlist .thumbnail {
+	float: left;
+}
+.adminlist .file {
+	float: left;
+	padding-left: 10px;
+}
+
+.loading {
+	background-image: url(../images/loading.gif);
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 11px;
+}
+#progressbar-container {
+	border: 1px solid #808080;
+}
+#progressbar {
+	background-color: #FFDD88;
+	text-align: center;
+}
+
+.modalheader {
+	background: transparent url('../images/modalheader.png') no-repeat scroll top left;
+	height: 48px;
+	padding: 5px;
+}
+td.modal_key {
+	width: 50%;
+	vertical-align: top;
+}
+td.modal_key span {
+	overflow:hidden;
+}
+

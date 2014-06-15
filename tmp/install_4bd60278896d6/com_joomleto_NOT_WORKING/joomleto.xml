@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<mosinstall type="component" version="1.0.8">
+
+  <productName>Joomleto</productName>
+  <version>0.0.1</version>
+  <joomlaVersion>1.0.8</joomlaVersion>
+
+	<name>joomleto</name>
+	<creationDate>2 Feb 2007</creationDate>
+	<author>Douglas Machado</author>
+	<copyright>GPL</copyright>
+	<authorEmail>Douglas@Focalizar.com.br</authorEmail>
+	<authorUrl>http://Focalizar.com.br</authorUrl>
+	<description></description>
+<productPicture>joomleto.png</productPicture>
+  <productUrl>http://www.focalizaisso.com.br</productUrl>
+  <setupUrl></setupUrl>
+  <trackerUrl></trackerUrl>
+  <copyright>(c) 2004-2007 Focalizar.com.br</copyright>
+
+  <license>GNU GPL</license>
+ <licenseText>
+    This software is released under the terms and conditions of the
+    <a href="http://www.gnu.org/copyleft/gpl.html"
+      target="_blank">GNU General Public License</a>.
+    For more information, please see the LICENCE file accompanying
+    the installation package.
+  </licenseText>
+  <warning>
+  Warranty<br />
+  This program is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+  PARTICULAR PURPOSE.
+  
+  </warning>
+
+  <credits>
+  </credits>
+    <files>
+        <filename>joomleto.class.php</filename>
+		<filename>joomleto.html.php</filename>
+		<filename>joomleto.php</filename>
+    </files>
+
+
+  <installfile>install.joomleto.php</installfile>
+  <uninstallfile>uninstall.joomleto.php</uninstallfile>
+<install>
+    <queries>
+      <query action="insert" table="components">
+        INSERT INTO `#__components` ( `id` , `name` , `link` , `menuid` , `parent` , `admin_menu_link` , `admin_menu_alt` , `option` , `ordering` , `admin_menu_img` , `iscore` , `params` )
+VALUES (
+NULL , 'Joomleto', 'option=com_joomleto', '0', '0', 'option=joomleto', 'Joomleto - Solução em Boletos', 'com_joomleto', '0', '', '0', ''
+);
+    </query>
+<query action="create" table="jleto_banco">
+CREATE TABLE IF NOT EXISTS `#__jleto_banco` (
+  `bco_id` int(11) NOT NULL auto_increment,
+  `bco_nome` varchar(50) NOT NULL default '',
+  `bco_numero` mediumint(9) NOT NULL default '0',
+  `bco_agencia` int(11) NOT NULL default '0',
+  `bco_ag_dv` int(11) NOT NULL default '0',
+  `bco_conta` int(11) NOT NULL default '0',
+  `bco_conta_dv` int(11) NOT NULL default '0',
+  `bco_cedente` int(11) NOT NULL default '0',
+  `bco_cedente_dv` int(11) NOT NULL default '0',
+  `bco_carteira` int(11) NOT NULL default '0',
+  `bco_nome_arquivo` varchar(30) NOT NULL default '',
+  `bco_published` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`bco_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
+</query>
+<query action="create" table="jleto_cliente">
+CREATE TABLE IF NOT EXISTS `#__jleto_cliente` (
+  `cli_id` int(11) NOT NULL auto_increment,
+  `cty_id` int(11) NOT NULL default '0',
+  `user_id` int(11) NOT NULL default '0',
+  `cli_nome` varchar(150) NOT NULL default '',
+  `cli_end` varchar(100) NOT NULL default '',
+  `cli_bairro` varchar(50) NOT NULL default '',
+  `cli_cep` int(11) NOT NULL default '0',
+  `cli_cnpj` bigint(20) NOT NULL default '0',
+  `cli_ie` bigint(20) NOT NULL default '0',
+  PRIMARY KEY  (`cli_id`),
+  KEY `cty_id` (`cty_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
+</query>
+<query action="create" table="jleto_menu">
+CREATE TABLE IF NOT EXISTS `#__jleto_menu` (
+  `id` int(11) NOT NULL auto_increment,
+  `menu_name` varchar(30) NOT NULL default '',
+  `menu_img` varchar(250) NOT NULL default '',
+  `menu_link` varchar(250) NOT NULL default '',
+  `menu_access` tinyint(3) NOT NULL default '2',
+  `menu_ordering` tinyint(3) NOT NULL default '0',
+  `menu_publish` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+</query>
+<query action="create" table="jleto_boleto">
+CREATE TABLE IF NOT EXISTS `#__jleto_boleto` (
+  `bto_id` int(11) NOT NULL auto_increment,
+  `cli_id` int(11) NOT NULL default '0',
+  `bco_id` int(11) NOT NULL default '0',
+  `bto_nosso_numero` bigint(20) NOT NULL default '0',
+  `bto_numero_doc` bigint(20) NOT NULL default '0',
+  `bto_emissao` datetime NOT NULL default '0000-00-00 00:00:00',
+  `bto_vencimento` datetime NOT NULL default '0000-00-00 00:00:00',
+  `bto_valor` double(9,2) NOT NULL default '0.00',
+  `bto_valor_liquidado` double(9,2) NOT NULL default '0.00',
+  `bto_comentario` varchar(250) NOT NULL default '',
+  `bto_acessos` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`bto_id`),
+  KEY `cli_id` (`cli_id`),
+  KEY `bco_id` (`bco_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
+</query>
+<query action="insert" table="jleto_menu">
+
+INSERT INTO `jos_jleto_menu` VALUES (1, 'Configuration', 'images/menu/icon-48-config.png', 'index2.php?option=com_joomleto&task=config', 1, 80, 1);
+INSERT INTO `jos_jleto_menu` VALUES (2, 'Menu Manager', 'images/menu/icon-48-menumgr.png', 'index2.php?option=com_joomleto&task=menumanager', 1, 70, 1);
+INSERT INTO `jos_jleto_menu` VALUES (3, 'Clientes', 'images/menu/icon-48-user.png', 'index2.php?option=com_joomleto&task=clientes', 2, 10, 1);
+INSERT INTO `jos_jleto_menu` VALUES (4, 'Gerar Boleto', 'images/menu/icon-48-cpanel.png', 'index2.php?option=com_joomleto&task=boletos', 2, 5, 1);
+INSERT INTO `jos_jleto_menu` VALUES (5, 'Ajuda', 'images/menu/icon-48-help_header.png', 'index2.php?option=com_joomleto&task=help', 2, 90, 1);
+INSERT INTO `jos_jleto_menu` VALUES (6, 'Bancos', 'images/menu/icon-48-money.png', 'index2.php?option=com_joomleto&task=bancos', 2, 15, 1);
+INSERT INTO `jos_jleto_menu` VALUES (7, 'Baixar Retorno', 'images/menu/icon-48-install.png', 'index2.php?option=com_joomleto&task=gerar_arquivo', 2, 100, 1);
+</query>
+
+
+
+  <uninstall>
+    <queries-noexec>
+        <query action="delete" table="components">
+DELETE FROM `#__components` WHERE `option` = 'com_joomleto';
+      </query>
+      <query action="drop" table="jleto_cliente">
+        DROP TABLE IF EXISTS `#__jleto_cliente`;
+      </query>
+      <query action="drop" table="jleto_menu">
+        DROP TABLE IF EXISTS `#__jleto_menu`;
+      </query>
+      <query action="drop" table="jleto_boleto">
+        DROP TABLE IF EXISTS `#__jleto_boleto`;
+      </query>
+      <query action="drop" table="jleto_menu">
+        DROP TABLE IF EXISTS `#__jleto_menu`;
+      </query>
+    </queries-noexec>
+  </uninstall>
+
+  <administration>
+    <menu icon="joomleto.png">Joomleto!</menu>
+    <submenu>
+      <menu act="cpanel" icon="cpanel.png">Painel de controle</menu>
+      <menu act="boletos" icon="boletos.png">Boletos</menu>
+      <menu act="gerar_retorno" icon="retorno.png">Gerar retorno</menu>
+      <menu act="bancos" icon="bancos.png">Bancos</menu>
+      <menu act="menu" icon="menu.png">Menu Manager</menu>
+      <menu act="config" icon="config.png">Configurações</menu>
+      <menu act="help" icon="help.png">Sobre Joomleto!</menu>
+    </submenu>
+<files>
+		<filename>admin.bancos.joomleto.php</filename>
+		<filename>admin.boletos.joomleto.php</filename>
+		<filename>admin.cliente.joomleto.php</filename>
+		<filename>admin.joomleto.html.php</filename>
+		<filename>admin.joomleto.php</filename>
+		<filename>boleto_banestes.php</filename>
+		<filename>boleto_bb.php</filename>
+		<filename>boleto_bradesco.bkp.php</filename>
+		<filename>boleto_bradesco.php</filename>
+		<filename>boleto_cef.php</filename>
+		<filename>boleto_hsbc.php</filename>
+		<filename>boleto_itau.php</filename>
+		<filename>boleto_unibanco.php</filename>
+		<filename>BUGS.txt</filename>
+		<filename>config.php</filename>
+		<filename>COPYING</filename>
+		<filename>COPYRIGHT</filename>
+		<filename>CREDITOS.txt</filename>
+		<filename>gerar_boleto.php</filename>
+		<filename>install.joomleto.php</filename>
+        <filename>uninstall.joomleto.php</filename>
+		<filename>help/screen.joomleto.html</filename>
+		<filename>images/menu/index.html</filename>
+		<filename>include/funcoes_banestes.php</filename>
+		<filename>include/funcoes_bb.php</filename>
+		<filename>include/funcoes_bradesco.php</filename>
+		<filename>include/funcoes_cef.php</filename>
+		<filename>include/funcoes_hsbc.php</filename>
+		<filename>include/funcoes_itau.php</filename>
+		<filename>include/funcoes_unibanco.php</filename>
+		<filename>include/funcoes_unibanco_com_bug.php</filename>
+		<filename>include/layout_banestes.php</filename>
+		<filename>include/layout_bb.php</filename>
+		<filename>include/layout_bradesco.php</filename>
+		<filename>include/layout_cef.php</filename>
+		<filename>include/layout_hsbc.php</filename>
+		<filename>include/layout_itau.php</filename>
+		<filename>include/layout_unibanco.php</filename>
+		<filename>js/cpf_cnpj.js</filename>
+		<filename>js/FormFieldCounter.js</filename>
+		<filename>js/FormFieldManager.js</filename>
+		<filename>js/FormFieldValidation.js</filename>
+		<filename>js/FormSelectKeyboardLocate.js</filename>
+		<filename>js/joomlaFormValidator.js</filename>
+		<filename>languages/brazilian.php</filename>
+		<filename>languages/english.php</filename>
+		<filename>LEIAME.txt</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>templates/default/bank_edit.php</filename>
+		<filename>templates/default/bank_show.php</filename>
+		<filename>templates/default/boletos_show.php</filename>
+		<filename>templates/default/boleto_edit.php</filename>
+		<filename>templates/default/config_show.php</filename>
+		<filename>templates/default/cpanel_build.php</filename>
+		<filename>templates/default/cust_edit.php</filename>
+		<filename>templates/default/cust_show.php</filename>
+		<filename>templates/default/general_functions.php</filename>
+		<filename>templates/default/header.php</filename>
+		<filename>templates/default/help.php</filename>
+		<filename>toolbar.joomleto.html.php</filename>
+		<filename>toolbar.joomleto.php</filename>
+		<filename>install.joomleto.php</filename>
+		<filename>uninstall.joomleto.php</filename>
+<filename>joomleto.xml</filename>
+	</files>
+	<images>
+		<filename>imagens/1.gif</filename>
+		<filename>imagens/2.gif</filename>
+		<filename>imagens/3.gif</filename>
+		<filename>imagens/6.gif</filename>
+		<filename>imagens/b.gif</filename>
+		<filename>imagens/imgbrrazu.gif</filename>
+		<filename>imagens/imgbrrlrj.gif</filename>
+		<filename>imagens/imgpxlazu.gif</filename>
+		<filename>imagens/logobanestes.jpg</filename>
+		<filename>imagens/logobb.jpg</filename>
+		<filename>imagens/logobradesco.jpg</filename>
+		<filename>imagens/logocaixa.jpg</filename>
+		<filename>imagens/logohsbc.jpg</filename>
+		<filename>imagens/logoitau.jpg</filename>
+		<filename>imagens/logounibanco.jpg</filename>
+		<filename>imagens/logo_empresa.gif</filename>
+		<filename>imagens/p.gif</filename>
+		<filename>images/brick.gif</filename>
+		<filename>images/bullet-date.gif</filename>
+		<filename>images/bullet-error.gif</filename>
+		<filename>images/bullet-info.gif</filename>
+		<filename>images/bullet-info.png</filename>
+		<filename>images/bullet-list.gif</filename>
+		<filename>images/bullet-list2.gif</filename>
+		<filename>images/bullet-list3.gif</filename>
+		<filename>images/bullet-tips.gif</filename>
+		<filename>images/clip-bg.gif</filename>
+		<filename>images/container-bg.gif</filename>
+		<filename>images/email.png</filename>
+		<filename>images/gear.gif</filename>
+		<filename>images/j_arrow.png</filename>
+		<filename>images/j_arrow_down.png</filename>
+		<filename>images/j_arrow_left.png</filename>
+		<filename>images/menu/icon-48-article.png</filename>
+		<filename>images/menu/icon-48-blank.png</filename>
+		<filename>images/menu/icon-48-books.png</filename>
+		<filename>images/menu/icon-48-category.png</filename>
+		<filename>images/menu/icon-48-checkin.png</filename>
+		<filename>images/menu/icon-48-component.png</filename>
+		<filename>images/menu/icon-48-config.png</filename>
+		<filename>images/menu/icon-48-cpanel.png</filename>
+		<filename>images/menu/icon-48-extension.png</filename>
+		<filename>images/menu/icon-48-frontpage.png</filename>
+		<filename>images/menu/icon-48-generic.png</filename>
+		<filename>images/menu/icon-48-help_header.png</filename>
+		<filename>images/menu/icon-48-inbox.png</filename>
+		<filename>images/menu/icon-48-info.png</filename>
+		<filename>images/menu/icon-48-install.png</filename>
+		<filename>images/menu/icon-48-language.png</filename>
+		<filename>images/menu/icon-48-library.png</filename>
+		<filename>images/menu/icon-48-media.png</filename>
+		<filename>images/menu/icon-48-menu.png</filename>
+		<filename>images/menu/icon-48-menumgr.png</filename>
+		<filename>images/menu/icon-48-module.png</filename>
+		<filename>images/menu/icon-48-money.png</filename>
+		<filename>images/menu/icon-48-plugin.png</filename>
+		<filename>images/menu/icon-48-section.png</filename>
+		<filename>images/menu/icon-48-static.png</filename>
+		<filename>images/menu/icon-48-stats.png</filename>
+		<filename>images/menu/icon-48-themes.png</filename>
+		<filename>images/menu/icon-48-trash.png</filename>
+		<filename>images/menu/icon-48-user.png</filename>
+		<filename>images/pdf.png</filename>
+		<filename>images/pin-bg.gif</filename>
+		<filename>images/quote.gif</filename>
+		<filename>images/seperator.gif</filename>
+		<filename>images/sticky-bg.gif</filename>
+		<filename>images/visit.gif</filename>
+	</images>
+	<css>
+		<filename>css/template.css</filename>
+		<filename>css/template_css.css</filename>
+	</css>
+</administration>
+
+</mosinstall>

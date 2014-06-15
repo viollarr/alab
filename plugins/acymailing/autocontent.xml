@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/plugin-install.dtd">
+<install type="plugin" version="1.5" method="upgrade" group="acymailing">
+	<name>AcyMailing Tag : automatic content insertion</name>
+	<creationDate>September 2009</creationDate>
+	<version>1.1.2</version>
+	<author>Acyba</author>
+	<authorEmail>dev@acyba.com</authorEmail>
+	<authorUrl>http://www.acyba.com</authorUrl>
+	<copyright>Copyright (C) 2009 ACYBA SARL - All rights reserved.</copyright>
+	<license>http://www.acyba.com/commercial_license.php</license>
+	<description>This plugin enables you to add several contents at the same time based on filters and also is very useful for the automatic Newsletter</description>
+	<files>
+		<filename plugin="autocontent">autocontent.php</filename>
+	</files>
+	<params addpath="/components/com_acymailing/params">
+		<param name="help" type="help" label="Help" description="Click on the help button to get some help" default="plugin-autocontent"/>
+		<param name="contentaccess" type="radio" default="registered" label="Content Access" description="AcyMailing will only include articles having the selected access in your Newsletter">
+			<option value="public">Public only</option>
+			<option value="registered">Public and Registered</option>
+			<option value="all">All</option>
+		</param>
+	</params>
+</install>

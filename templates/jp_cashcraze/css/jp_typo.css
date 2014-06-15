@@ -1,0 +1,112 @@
+#jp_typo td{padding:10px 0 20px 0; text-align:left}
+#jp_typo p{margin:0 0 6px 0;}
+.list_row td{padding:10px 0 20px 0;}
+
+h6#jp_header{padding:4px 8px; background:#f9f9f9; color:#555; font-size:20px; margin-bottom:10px;}
+
+/* PREFORMATTED TEXT
+-------------------------------------------------------------*/
+/* Pre, Code ---*/
+pre, .code {
+	background-color: #ffffdd !important;
+	border: 1px solid #ccc !important;
+	border-left-width: 5px !important;
+	font: 1em/1.5 Monaco, Consolas, "Courier News", monospace !important;
+	padding: 10px 15px !important;
+}
+/* Dropcap ---*/
+.dropcap {
+	display: block;
+	float: left;
+	font: 60px/40px Georgia, Times, serif;
+	padding: 7px 8px 0 0;
+}
+
+/* Inline Words Hilite ---*/
+.highlight {
+	background: #ffffdd;
+	font-weight: bold;
+	padding: 1px 5px;
+}
+/* Blockquote ---*/
+blockquote { font-family: Georgia, Times, serif; font-size: 100%; }
+
+blockquote span.close {
+	background: url(../images/typo/sc-q.gif) no-repeat bottom right;
+	display: inline-block;
+	padding: 0 20px 0 0;
+}
+
+blockquote span.open {
+	background: url(../images/typo/so-q.gif) no-repeat left top;
+	display: inline-block;
+	padding: 0 0 0 20px;
+}
+/* Special list style ---*/
+ul.arrow, ul.star, ul.check{margin:0; padding:0; list-style-type:none;
+}
+ul.arrow li {
+	background: none;
+	margin:2px 0 2px 4px;
+	padding: 0 0 0 25px;
+	position: relative;
+	overflow: hidden;
+	background: url(../images/typo/arrow.png) left top no-repeat;
+}
+ul.star li {
+	background: none;
+	margin:2px 0 2px 4px;
+	padding: 0 0 0 25px;
+	position: relative;
+	overflow: hidden;
+	background: url(../images/typo/star.png) left top no-repeat;
+}
+ul.check li {
+	background: none;
+	margin:2px 0 2px 4px;
+	padding: 0 0 0 25px;
+	position: relative;
+	overflow: hidden;
+	background: url(../images/typo/check.png) left top no-repeat;
+}
+
+
+
+/* Special Messages style ---*/
+
+p.icon-error { background: url(../images/typo/error.png) left top no-repeat; color: #CC0000; padding-left:24px }
+p.icon-message { background: url(../images/typo/message.png) left top no-repeat; color: #2C79B3; padding-left:24px }
+p.icon-tips { background: url(../images/typo/tips.png) left top no-repeat; color: #E58C00; padding-left:24px }
+p.icon-key { background: url(../images/typo/key.png) left top no-repeat; padding-left:24px }
+p.icon-tag { background: url(../images/typo/tag.png) left top no-repeat; padding-left:24px }
+p.icon-cart { background: url(../images/typo/cart.png) left top no-repeat; padding-left:24px }
+p.icon-doc { background: url(../images/typo/doc.png) left top no-repeat; padding-left:24px }
+p.icon-note { background: url(../images/typo/note.png) left top no-repeat; padding-left:24px }
+p.icon-photo { background: url(../images/typo/photo.png) left top no-repeat; padding-left:24px }
+p.icon-mobi { background: url(../images/typo/mobi.png) left top no-repeat; padding-left:24px }
+
+/* Box without icons */
+p.box-grey, p.box-hilite { padding: 10px 15px !important; }
+p.box-grey {
+	background: #f7f7f7;
+	border-color: #dddddd;
+	border-style: dotted;
+}
+p.box-hilite { background: #ffffdd; border-color: #d2d2b6; }
+
+p.box-hilite {
+	background: #ffffdd;
+	border-color: #d2d2b6;
+	border-style: dotted;
+}
+/* Box with icons */
+
+p.box-sticky { background: url(../images/typo/sticky-big.png) no-repeat left; border: 1px solid #ddd; padding: 10px 10px 10px 50px; }
+p.box-download { background: url(../images/typo/download-big.png) no-repeat left; border: 1px solid #ddd; padding: 10px 10px 10px 50px; }
+
+
+
+
+
+
+

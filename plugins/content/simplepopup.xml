@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content" method="upgrade">
+	<name>Content - Simple Pop-Up</name>
+	<author>Anders Wasén</author>
+	<creationDate>2011-05-14</creationDate>
+	<copyright>Copyright 2011 (C) Anders Wasén. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>awasen@gmail.com</authorEmail>
+	<authorUrl>http://wasen.net</authorUrl>
+	<version>0.1.1</version>
+	<description>Simple Pop-Up - It will display a FancyBox Pop-Up on any page where added in an article...</description>
+	
+	<files>
+		<filename plugin="simplepopup">simplepopup.php</filename>
+		<folder>simplepopup</folder>
+		<folder>simplepopup/fancybox</folder>
+	</files>
+	
+	<languages>
+	   <language tag="en-GB">en-GB.plg_content_simplepopup.ini</language>
+	</languages>
+
+	<params addpath="/plugins/content/simplepopup/elements">
+		<param name="spu_aligntext" type="radio" default="center" label="Align text" description="Text alignment in the Pop-Up box.">
+			<option value="left">Left</option>
+			<option value="center">Center</option>
+			<option value="right">Right</option>
+		</param>
+		<param name="spu_boxwidth" type="text" default="400" label="Pop-up box width (in pixels)" description="Pop-up box width (in pixels)."/>
+		<param name="spu_boxheight" type="text" default="auto" label="Pop-up box height (in pixels)" description="Pop-up box height (in pixels). Set it to [auto] to grow as needed on height."/>
+		<param name="spu_autodimensions" type="radio" default="false" label="Auto Dimensions" description="The Pop-Up box will shape according to content.">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</param>
+		<param name="spu_cookie" type="radio" default="0" label="Use cookie (to only show once)" description="Shows the message only once at pop-up on load. Default cookie persistence is 365 days.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="spu_cookiepersistence" type="text" default="365" label="Cookie persistence (in days)" description="The number of days to passbefore message is shown again to the same user (=computer)."/>
+		<param name="@spacer" type="spacer" default="" label="" description=""/>
+		<param name="" type="donate" default="" label="Do you like it?" description="Feel like showing your appreciation? Build: 1.0.2.1"/>
+		
+	</params>
+	<params group="advanced">
+		<param name="spu_jqueryinclude" type="radio" default="0" label="Load jQuery through Joomla" description="This will load jQuery through Joomla or nativly (hard).">
+			<option value="0">Joomla</option>
+			<option value="1">Include</option>
+		</param>
+		<param name="spu_jquery" type="radio" default="0" label="Prevent jQuery 1.4.3 loading" description="This will exclude jQuery from loading in Simple File Upload. There are other extensions/templates that can cause conflicts, use this to eliminate any jQuery conflicts.">
+			<option value="0">Load all</option>
+			<option value="1">FancyBox only</option>
+			<option value="2">NONE</option>
+		</param>
+		<param name="spu_jquerync" type="radio" default="0" label="Add jQuery noConflict" description="This will load jQuery noConfig option for other extensions using jQuery (normally not needed).">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description=""/>
+		<param name="spu_debug" type="radio" default="0" label="Debug mode" description="Shows debugging information.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+	
+</install>

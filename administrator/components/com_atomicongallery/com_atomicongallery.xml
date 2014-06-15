@@ -1,0 +1,39 @@
+<install type="component" version="1.5.0">
+    <name>AtomiconGallery</name>
+    <version>1.0.1</version>
+    <description></description>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <author>Atomicon</author>
+    <authoremail>info@atomicon.nl</authoremail>
+    <authorurl>http://www.atomicon.nl</authorurl>
+    <copyright>Copyright (C) 2005 - 2009 Atomicon. All rights reserved.</copyright>
+    <creationDate>07-Apr-2010</creationDate>
+    <files folder="site">
+        <folder>assets</folder>
+        <folder>language</folder>
+        <folder>views</folder>
+        <filename>atomicongallery.php</filename>
+        <filename>controller.php</filename>
+    </files>
+    <languages folder="site/language">
+        <language tag="en-GB">en-GB/en-GB.com_atomicongallery.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_atomicongallery/assets/images/atomicon16.png" link="option=com_atomicongallery">AtomiconGallery</menu>
+        <files folder="admin">
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>views</folder>
+            <filename>admin.atomicongallery.php</filename>
+            <filename>config.xml</filename>
+        </files>
+        <languages folder="admin/language">
+            <language tag="de-DE">de-DE/de-DE.com_atomicongallery.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_atomicongallery.ini</language>
+            <language tag="nl-NL">nl-NL/nl-NL.com_atomicongallery.ini</language>
+            <language tag="sv-SE">sv-SE/sv-SE.com_atomicongallery.ini</language>
+        </languages>
+    </administration>
+</install>

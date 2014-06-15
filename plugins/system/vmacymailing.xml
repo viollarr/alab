@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/plugin-install.dtd">
+<install type="plugin" version="1.5" method="upgrade" group="system">
+	<name>AcyMailing : VirtueMart checkout subscription</name>
+	<creationDate>October 2009</creationDate>
+	<version>1.1.2</version>
+	<author>Acyba</author>
+	<authorEmail>dev@acyba.com</authorEmail>
+	<authorUrl>http://www.acyba.com</authorUrl>
+	<copyright>Copyright (C) 2009 ACYBA SARL - All rights reserved.</copyright>
+	<license>http://www.acyba.com/commercial_license.php</license>
+	<description>This plugins handles the Mailing List subscription during the VirtueMart checkout process</description>
+	<files>
+		<filename plugin="vmacymailing">vmacymailing.php</filename>
+	</files>
+	<params addpath="/components/com_acymailing/params">
+		<param name="help" type="help" label="Help" description="Click on the help button to get some help" default="plugin-vmacymailing"/>
+		<param name="checkfield" type="vmfield" label="Required field" default="user_email" description="This field should not be empty to susbcribe the user. You can use this parameter to add a simple checkbox option in your checkout process"/>
+		<param name="lists" type="lists" default="All" label="Subscribe the user to" description="During the checkout process, AcyMailing will subscribe the user to the selected published lists" />
+		<param name="sendconf" type="radio" default="no" label="Send a confirmation e-mail?" description="If you require a confirmation e-mail in your AcyMailing Configuration and don't require a registration in VirtueMart, you should turn this option ON">
+			<option value="no">No</option>
+			<option value="yes">Yes</option>
+		</param>
+		<param name="subconf" type="radio" default="default" label="Subscribe the user as confirmed?" description="In some cases you may want to require a confirmation in your global AcyMailing configuration but don't want to bother your buyers with it. So you can turn the option Send Confirmation OFF for this plugin and turn this one ON">
+			<option value="default">Follow my default configuration</option>
+			<option value="yes">Yes</option>
+		</param>
+	</params>
+</install>

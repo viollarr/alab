@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>alab_template</name>
+	<author>Imaginatto Design e Marketing</author>
+	<copyright>GPL</copyright>
+	<authorUrl>www.imaginatto.com.br</authorUrl>
+	<version>1.0</version>
+	<cretationDate>March 2010</cretationDate>
+	<description>Template do site ALAB.</description>
+
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>css/template.css</filename>
+		<filename>css/editor.css</filename>
+		<filename>js/jquery.js</filename>
+		<filename>js/jquery.corner.js</filename>
+		<filename>js/jquery.cycle.js</filename>
+	</files>
+	<positions>
+		<position>login_associado</position>
+		<position>logout_associado</position>
+		<position>header</position>
+		<position>topomenu</position>
+		<position>menu_principal</position>
+		<position>menu_interno</position>
+		<position>menu_interno_restrito</position>
+		<position>menu_interno_nao_restrito</position>
+		<position>menu_footer</position>
+		<position>banner_destaque</position>
+		<position>banner_secundario</position>
+		<position>breadcrumbs</position>
+		<position>noticia_destaque</position>
+		<position>outras_noticia</position>
+		<position>user1</position>
+		<position>user_pagamento_evento</position>
+		<position>carrinho</position>
+		<position>links_rapidos</position>
+		<position>newsletter</position>
+		<position>busca</position>
+		<position>footer</position>
+		<position>analytics</position>
+		<position>nehuma_posicao</position>
+	</positions>
+	<!--
+	<params>
+		<param name="colorVariation" type="list" default="white" label="Color Variation" description="Color variation to use">
+			<option value="Blue">Blue</option>
+			<option value="Red">Red</option>
+		</param>
+	</params>
+	-->
+</install>

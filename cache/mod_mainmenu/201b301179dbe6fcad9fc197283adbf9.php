@@ -1,0 +1,2 @@
+<?php die("Access Denied"); ?>
+a:2:{s:6:"output";s:0:"";s:6:"result";s:215:"<ul><li access="0" level="1" id="121"><a href="/pt/associacoes"><span><![CDATA[Associações]]></span></a></li><li access="0" level="1" id="122"><a href="/pt/you-tube"><span><![CDATA[You Tube]]></span></a></li></ul>";}

@@ -1,0 +1,85 @@
+#atomicongallery .thumbnail {
+    background-color: transparent;
+	background-repeat:  no-repeat;
+	background-position: center center;
+	display: table-cell;
+	float: left;
+    text-align: left;
+    vertical-align: top;
+    min-width: 48px;
+	min-height: 48px;
+}
+
+#atomicongallery .thumbnail img {
+	width: 100%;
+	height: 100%;
+	border: none;
+	background-color: transparent !important;
+}
+
+#atomicongallery .clearfix {
+	clear: both;
+}
+
+#atomicongallery .folder_up {
+    padding: 5px;
+    padding-left: 0px;
+	margin: 0;
+	margin-bottom: 5px;
+	display: block;
+}
+
+#atomicongallery .folder {
+	padding: 5px;
+	margin: 0;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+#atomicongallery .folder .info {
+	float: left;
+	padding: 15px;
+	
+}
+
+#atomicongallery .componentheading {
+	font-size: 160%;
+	line-height: 160%;
+}
+
+#atomicongallery .folder .info .title {
+    font-size: 120%;
+	font-weight: bold;
+	display: block;
+	line-height: 120%;
+}
+
+#atomicongallery .folder .info .description {
+    font-size: 100%;
+    display: block;
+    line-height: 100%;
+	padding-top:10px;
+}
+
+#atomicongallery .file {
+	float: left;
+	overflow: hidden;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+}
+
+#atomicongallery .footer {
+	clear: both;
+	display: block;
+	text-align: center;
+	padding: 5px;
+}
+
+#atomicongallery .footer a{
+    background: transparent url('../images/atomicon16.png') no-repeat scroll top left;
+    padding-left: 20px;
+    height: 16px;
+    font-size: 14px;
+    color: #808080;
+    text-decoration: none;
+}

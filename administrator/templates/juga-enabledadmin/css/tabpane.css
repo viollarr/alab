@@ -1,0 +1,29 @@
+.dynamic-tab-pane-control.tab-pane {position:relative;}
+
+.dynamic-tab-pane-control .tab-row .tab {width:auto;height:16px;background-image:none;background-color:#fff;position:relative;top:0;display:inline;float:left;overflow:hidden;cursor:pointer;margin:4px -1px 1px 2px;padding:2px 4px 0px 4px;border-top:1px solid #cdcdcd;border-right:1px solid #cdcdcd;border-bottom:1px solid #cdcdcd;border-left:1px solid #cdcdcd;z-index:1;white-space:nowrap;text-align:center;}
+
+.dynamic-tab-pane-control .tab-row .tab.selected {width:auto !important;height:17px !important;background-image:none !important;background-image:url(../images/x.gif) no-repeat;background-color:#555;z-index:3;padding:3px 4px 0px 4px;margin:4px -3px -3px 0px;top:-2px;border-top:1px solid #cdcdcd;border-right:1px solid #cdcdcd;border-bottom:0px solid #555;border-left:1px solid #cdcdcd;}
+
+.dynamic-tab-pane-control .tab-row .tab a {width:auto;font-family:Tahoma;font-size:11px;font-weight:bold;color:#555;}
+.dynamic-tab-pane-control .tab-row .tab a:hover {width:auto;font-family:Tahoma;font-size:11px;font-weight:bold;color:#27552E;}
+.dynamic-tab-pane-control .tab-row .tab.selected a {color:#fff;}
+.dynamic-tab-pane-control .tab-row .tab.selected a:hover {color:#27552E;}
+.dynamic-tab-pane-control .tab-row .tab.hover {width:auto;height:16px;background-image:none;background-repeat:no-repeat;background-color:#f0f7e2;}
+.dynamic-tab-pane-control .tab-row .tab.selected.hover {width:auto;height:16px;background-image:none;background-repeat:no-repeat;background-color:#f0f7e2;border-bottom:0px solid #555;}
+.dynamic-tab-pane-control .tab-page {float:left;position:relative;top:-3px;padding:0px;border:1px solid #d5d5d5;background:#fcfcfe;z-index:2;margin-left:4px;width:97%;/* IE fix */}
+.dynamic-tab-pane-control .tab-row {z-index:1;white-space:nowrap;margin-left:8px !important;margin-left:11px;}
+
+/* --- Force Admin CSS Corrections --- */
+fieldset {margin-bottom:10px;border:1px solid #ccc;padding:5px;text-align:left;}
+
+
+/* Help Files */
+.helpIndex {border:0px;width:90%;height:100%;padding:0px 5px 10px 0px;overflow:auto;}
+.helpIndex a {display:block;margin:0px;padding:0px;}
+.helpIndex br {height:1px;line-height:1px;}
+.helpFrame {border:0;width:98%;height:860px;padding:0px 5px 0px 10px;margin:0px 4px 0px 0px;overflow:auto;}
+
+
+table.adminform {width:99% !important;width:98%;background-color:#fff;margin:4px;padding:10px;border-collapse:collapse;border:1px solid #ccc;}
+.tab-page table.adminform {width:100%;background-color:#fff;margin:0px;padding:10px;border-collapse:collapse;border:0px solid #ccc;}
+#controlpanel.adminform {width:100% !important;width:99%;background-color:#fff;margin:4px;padding:10px;border-collapse:collapse;border:0px solid #ccc;}

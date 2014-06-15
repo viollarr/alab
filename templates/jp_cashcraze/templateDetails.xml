@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>Cashcraze</name>
+	<creationDate>Jun 2012</creationDate>
+	<author>midia33</author>
+	<copyright>Single License</copyright>
+	<authorEmail>info@joomlaplates.com</authorEmail>
+	<authorUrl>http://www.joomlaplates.com</authorUrl>
+	<version>1.5.001</version>
+<description>
+ <![CDATA[ <h1>CashCraze</h1>
+
+<h3>Changelog</h3>
+
+<b>1.0</b><br/>
+<ul>
+
+    <li> 30/Dez/2011 - Version 1.5.001 - Main Release</li>
+
+</ul>
+
+
+]]> 
+</description>
+
+<files>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>includes</folder>
+		<filename>templateDetails.xml</filename>
+		<filename>index.php</filename>
+		<filename>params.ini</filename>
+		<filename>template_thumbnail.png</filename>		
+		<filename>index.html</filename>				
+</files>
+		
+<positions>
+	<position>before</position>
+	<position>after</position>
+	<position>breadcrumbs</position>
+	<position>suckerfish</position>
+	<position>user1</position>
+	<position>user2</position>
+	<position>user3</position>
+	<position>user4</position>
+	<position>user5</position>
+	<position>user6</position>
+	<position>suckerfish</position>
+	<position>after</position>
+	<position>before</position>
+	<position>debug</position>
+	<position>breadcrumbs</position>
+	<position>search</position>
+	<position>footer</position>
+	<position>banner</position>
+	<position>right</position>
+	<position>top</position>
+	<position>left</position>
+	<position>footer</position>
+	<position>debug</position>
+	<position>header</position>
+	<position>header1</position>
+	<position>header2</position>
+	<position>header3</position>
+	<position>header4</position>
+	<position>header5</position>
+	<position>header6</position>
+	<position>header7</position>
+	<position>header8</position>
+	<position>header9</position>
+	<position>header10</position>
+	<position>header11</position>
+	<position>header12</position>
+	<position>slideshow</position>
+</positions>
+
+<params>
+	    <param name="template_layout" type="list" default="left_main_right" label="Template Layout" description="Template Layout">
+			<option value="left_main_right">Left Main Right</option>
+			<option value="left_right_main">Left Right Main</option>
+			<option value="main_left_right">Main Left Right</option>
+		</param>
+		<param name="template_width" type="text" default="950px" label="Template Width" description="Set your Template Width in pixel or precent, basic width is 980px" />
+		<param name="module_width" type="text" default="200px" label="Left+Right Module Width" description="Set your Module Width in pixel only, basic width is 200px" />
+		<param name="cssThree" type="list" default="1" label="Enable CSS3 effects?" description="Enables nice CSS3 effects like rounded corner, text shadows etc. Only users with modern browsers can see the effects, Users with older and IE browsers will see the normal version. Turn off if you want to have the same user experience for all visitors">
+			<option value="0">Off</option>
+			<option value="1">On</option>
+		</param>
+	<param name="sliderHeight" type="text" default="300" size="5" label="Height of the Slider Area" description="Enter the height of the slider Area in px" />
+		<param name="slider_width" type="text" default="910" label="Slider Width" description="Enter the width of the slider Area in px" />
+		
+		<param name="bounce" type="radio" default="slide" label="Bounce Slide Effect" description="Choose the type of slide effect">
+			<option value="bounce">Bounce</option>
+			<option value="slide">Slide</option>
+		
+		</param>
+		<param name="sliderAuto" type="radio" default="1" label="Autoplay" description="Enables the autoplay function for the slider">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		
+		<param name="sliderArrows" type="radio" default="1" label="Show Next/Prev. arrows" description="Show arrows on the left and right side to navigate forward and backwards">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="sliderTime" type="text" default="6000" size="5" label="Duration of the Slides change" description="Enter the time between one slide to another in ms" />
+		<param name="slimbox" type="radio" default="1" label="Activate Slimbox" description="Loading Slimbox JS">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="showSuckerfish" type="radio" default="1" label="Activate MooMenu" description="enables Moomenu via JS">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+	</params>
+</install>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/module-install.dtd">
+<install type="module" version="1.5.0" method="upgrade">
+	<name>Expose Scroller</name>
+	<creationDate>14/08/2010</creationDate>
+	<author>GotGTEK Team</author>
+	<authorEmail>info@GotGTEK.net</authorEmail>
+	<authorUrl>www.GotGTEK.net</authorUrl>
+	<copyright>Copyright (C) 2010 GotGTEK. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>3.2</version>
+	<description>THIS_MODULE_SHOWS_A_SCROLLING_BAR_OF_IMAGES</description>
+	
+	<files>
+		<filename module="mod_expose_scroller">mod_expose_scroller.php</filename>
+		<filename>mod_expose_scroller.xml</filename>
+		<filename>CHANGELOG.php</filename>
+		<filename>continiousscroll.js</filename>
+		<filename>scrollinit.js</filename>
+		<filename>index.html</filename>
+		<filename>folder.php</filename>
+		<filename>xml.php</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB.mod_expose_scroller.ini</language>
+		<language tag="nl-NL">nl-NL.mod_expose_scroller.ini</language>
+	</languages>
+	
+	<params>
+		<param name="ModuleId_sfx" type="text" default="expose_scroller1" label="MODULE_ID_SUFFIX" description="DESC_MODULE_ID_SUFFIX" />
+		<param name="ImagePath" type="text" default="" label="ALBUMID_OR_THUMBNAILPATH" description="DESC_ALBUMID_OR_THUMBNAILPATH" />
+		<param name="Subdirs" type="radio" default="1" label="INCLUDE_SUBFOLDERS" description="DESC_INCLUDE_SUBFOLDERS">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="type" type="text" default="\.(jpg|gif|png)$" label="IMAGE_SEARCH_TYPE" description="DESC_IMAGE_SEARCH_TYPE" />
+
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="Linking" type="list" default="album" label="IMAGES_LINKED" description="DESC_IMAGES_LINKED">
+			<option value="off">NO_LINKING</option>
+			<option value="collection">COLLECTION</option>
+			<option value="album">ALBUMSTRIP</option>
+			<option value="photo">PHOTO</option>
+			<option value="slideshow">RUN_SLIDESHOW_FROM_PHOTO</option>
+			<option value="slideshowfirst">RUN_SLIDESHOW_FROM_FIRST</option>
+			<option value="shadowbox">SHADOWBOX_SINGLE</option>
+			<option value="shadowboxnav">SHADOWBOX_WITH_NAVIGATION</option>
+		</param>
+		<param name="Pause" type="radio" default="1" label="PAUSE_ONMOUSEOVER" description="DESC_PAUSE_ONMOUSEOVER">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="Width" type="text" size="20" default="100%" label="SCROLL_WIDTH" description="DESC_SCROLL_WIDTH" />
+		<param name="Height" type="text" size="20" default="150px" label="SCROLL_HEIGHT" description="DESC_SCROLL_HEIGHT" />
+
+		<param name="@spacer" type="spacer" default="" label="" description=""/>	
+		<param name="PicsNum" type="text" size="20" default="10" label="QUANTITY_OF_PICS" description="DESC_QUANTITY_OF_PICS" />
+		<param name="PickMethod" type="list" default="random" label="DISPLAY_METHOD" description="DESC_DISPLAY_METHOD">
+			<option value="filename">FILENAME</option>
+			<option value="random">RANDOM</option>
+			<option value="latest">LATEST</option>
+		</param>
+
+		<param name="@spacer" type="spacer" default="" label="" description=""/> 
+		<param name="Direction" type="list" default="left" label="SCROLL_DIRECTION" description="DESC_SCROLL_DIRECTION">
+			<option value="up">UP</option>
+			<option value="down">DOWN</option>
+			<option value="left">LEFT</option>
+			<option value="right">RIGHT</option>
+			<option value="horizontal">NO_SCROLLING_-_HORIZONTAL</option>
+			<option value="vertical">NO_SCROLLING_-_VERTICAL</option>
+		</param>
+		<param name="Speed" type="text" size="20" default="50" label="SCROLL_SPEED" description="DESC_SCROLL_SPEED" />
+		<param name="Space" type="text" size="20" default="3px" label="SCROLL_SPACE" description="DESC_SCROLL_SPACE" />
+
+		<param name="@spacer" type="spacer" default="" label="" description=""/> 
+		<param name="UseCss" type="radio" default="1" label="USE_CSS_FORMATTING_BELOW" description="DESC_USE_CSS_FORMATTING_BELOW">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="CSS" type="textarea" rows="10" cols="20" default="a img{border:0;}" label="CSS" description="DESC_CSS" />
+	</params>
+</install>

@@ -1,0 +1,90 @@
+/**
+ * Changelog
+ *
+ * @package     Modules Anywhere
+ * @version     1.3.4
+ *
+ * @author      Peter van Westen <peter@nonumber.nl>
+ * @link        http://www.nonumber.nl
+ * @copyright   Copyright (C) 2010 NoNumber! All Rights Reserved
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+/**
+ * + Added
+ * ! Removed
+ * ^ Changed
+ * # Fixed
+ */
+
+13-Feb-2009 : v1.3.4
+ ^ Changed the License Code check (now controlled by the License Manager)
+ # Fixed errors regarding preg_match_all
+ # Fixed incorrect message about plugin not being installed (in editor button settings
+ # Fixed wrong version number in xml file
+
+29-Jan-2010 : v1.3.3
+ + Added option to ignore published state of modules
+ ^ Reduced number of database queries
+ # Fixed issue with deprecated syntax for php 5.3+
+ # Fixed issue with preg_match_all error in some cases (when article author is not set)
+ # Fixed issue with assignment to JACL user group levels not working correctly
+ # Fixed issue with false message about system plugin missing
+
+26-Jan-2010 : v1.3.2
+ # Fixed tags with style not working
+ # Fixed location of Joomla! DTD files
+
+22-Jan-2010 : v1.3.1
+ # Fixed issue with editor button placing half a comment tag (breaks editor on IE)
+
+20-Jan-2010 : v1.3.0
+ + Added option to set text in editor button
+ + Added option to not display icon in editor button
+ + Added Commercial License Code support
+ ^ Made settings react a little faster (toggling options)
+ ^ Changed file encoding to UTF-8
+ ^ Improved styling of edior button popup
+ # Fixed issue with titles with special characters
+ # Fixed issue with modules being handled in editor on frontend
+ # Fixed issue with module tag still being handled within head
+
+09-Oct-2009 : v1.2.0
+ ^ Changed the update check
+ ^ Changed to make module tag only be handled within body tag (not in head)
+ # Fixed issue with language file not being loaded (comments in html not readable)
+ # Fixed issue with popup not being able to open on some setups
+ # Fixed issue with errors on articles with no creator
+
+08-Aug-2009 : v1.1.4
+ # Fixed issue with errors regarding "Call to a member function get() on a non-object" on some modules
+
+07-Aug-2009 : v1.1.3
+ # Fixed issue with errors in feeds when using K2
+
+20-July-2009 : v1.1.2
+ ^ MODA tags will not show anymore when server runs out of memory
+ # Fixed issue with modules with numeric names not working
+ # Fixed issue with pagination and ordering not working in Modules Anywhere editor button popup window
+
+14-July-2009 : v1.1.1
+ # Fixed issue with module tags still being converted in edit page when there are forms in the text
+
+14-July-2009 : v1.1.0
+ + Added jumper setting
+ ^ Changed auto installer
+ # Fixed issue with module tags in articles being converted to modules when editing in frontend
+ # Fixed issue with update notification not working correctly
+
+08-June-2009 : v1.0.0
+ + First stable release
+Modules Anywhere is based on Modules in Content.
+Changes since Modules in Content v0.1.3:
+ + Added an editor button to easily insert the {module} tag
+ + Added options for components and other areas
+ ^ Changed the way plugin works so you can use the syntax everywhere (not only in articles)
+ ^ Changed installation procedure (automatic installer/updater)
+ ^ Changed different administrator elements
+ ^ Changed update notification
+ ! Removed update icon in administrator toolbar
+ # Fixed issue with style overruling not working

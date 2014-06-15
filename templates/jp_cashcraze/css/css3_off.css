@@ -1,0 +1,6 @@
+.function_inner .search {float:left; width:400px; margin-top:2px}
+.function_inner .search label { display:none}
+
+.function_inner .button, .button {margin:0 4px 0 4px; padding: 4px; background:#ff9c00; color:#fff;line-height:120%}
+.function_inner input {border:none;  line-height:100%}
+.imgusertop{display:block; float:left}

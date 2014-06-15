@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config menu="hide">
+	<params>
+		<param name="simple_list" type="radio" default="0" label="PARAM_SIMPLE" description="PARAM_SIMPLE_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="frontend_upload" type="radio" default="0" label="PARAM_FUPLOAD" description="PARAM_FUPLOAD_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="paths" type="text" size="90" default="images" label="PARAM_FOLDERS" description="PARAM_FOLDERS_DESC" />
+		<param name="rss" type="radio" default="1" label="NEWSFEED" description="NEWSFEED_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="debug" type="radio" default="0" label="PARAM_DEBUG" description="PARAM_DEBUG_DESC">
+			<option value="0">NO</option>
+			<option value="1">YES</option>
+		</param>
+		<param name="bcss" type="hidden" default="" />
+		<param name="rcss" type="hidden" default="" />
+	</params>
+</config>

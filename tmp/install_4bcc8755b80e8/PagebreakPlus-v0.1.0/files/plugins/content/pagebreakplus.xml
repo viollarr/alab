@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>Content - PagebreakPlus</name>
+	<author>GeoXeo</author>
+	<creationDate>February 2010</creationDate>
+	<copyright>Copyright (C) 2010 GeoXeo. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@geoxeo.com</authorEmail>
+	<authorUrl>www.geoxeo.com</authorUrl>
+	<version>0.1.0</version>
+	<description>DESCCONTENTPAGEBREAK</description>
+	<files>
+		<filename plugin="pagebreakplus">pagebreakplus.php</filename>
+		<folder>pagebreakplus</folder>
+	</files>
+	
+	<params>
+		<param name="enabled" type="radio" default="1" label="Enable Plugin" description="PARAMENABLED">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="title" type="radio" default="1" label="Site Title" description="PARAMSITETITLE">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="multipage_toc" type="radio" default="1" label="Table of Contents" description="PARAMSITETOC">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+		<param name="showall" type="radio" default="1" label="Show All" description="PARAMSITESHOWALL">
+			<option value="0">Hide</option>
+			<option value="1">Show</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="ordered-list" type="radio" default="0" label="HTML list type" description="Do you want an unordered or an ordered list ?">
+			<option value="0">Unordered (ul)</option>
+			<option value="1">Ordered (ol)</option>
+		</param>
+		<param name="orientation" type="radio" default="0" label="TOC orientation" description="Do you want an horizontal or a vertical TOC ?">
+			<option value="0">Vertical</option>
+			<option value="1">Horizontal</option>
+		</param>
+		<param name="position" type="radio" default="0" label="TOC position" description="Do you want the TOC right or left ?">
+			<option value="0">Right</option>
+			<option value="1">Left</option>
+		</param>
+		<param name="parent" type="radio" default="0" label="TOC parent" description="Do you want the TOC in the article or in a module ?">
+			<option value="0">Article</option>
+			<option value="1">Module</option>
+		</param>
+		<param name="nav-position" type="radio" default="0" label="Navigation Box" description="Where do you want the navigation box ? (position relative to the TOC)">
+			<option value="0">None</option>
+			<option value="1">Above</option>
+			<option value="2">Below</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label="" description="" />
+		<param name="set-first-tab-text" type="radio" default="0" label="Set text of 1rst tab" description="Do you want to set the text of 1rst tab ? (If not we will use the title of the article)">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="first-tab-text" type="text" size="20" default="Introduction" label="Text in 1rst tab" description="Text you want to see in the 1rst tab of the TOC" />
+		
+	</params>
+</install>

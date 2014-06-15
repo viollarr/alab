@@ -1,0 +1,102 @@
+/* reset values */
+div#contenttoc, 
+div#contenttoc div,
+div#contenttoc ul,
+div#contenttoc ol,
+div#contenttoc ol li,
+div#contenttoc ul li,
+div#contenttoc ol li a,
+div#contenttoc ul li a,
+div#contenttoc ol li a:link,
+div#contenttoc ul li a:link,
+div#contenttoc ol li a:visited,
+div#contenttoc ul li a:visited,
+div#contenttoc ol li a:hover,
+div#contenttoc ul li a:hover {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: none;
+}
+
+div#contenttoc ul,
+div#contenttoc ol {
+	list-style: none;
+}
+
+div#contenttoc ol li a,
+div#contenttoc ul li a {
+	display: inline;
+}
+/***************************************************/
+
+
+div#contenttoc {
+	width: 25%;
+	border-style: solid;
+	border-color: #656556;
+	border-size: 1px;
+	border-width: 1px;
+	margin: 0 0 10px 10px;
+	float: right;
+}
+
+div#contenttoc div.tocnav {
+	width: 98%;
+	text-align: center;
+	padding: 2px;
+}
+
+div#contenttoc div.tocnav.top {
+	border-bottom: solid 1px;
+}
+
+div#contenttoc div.tocnav.bottom {
+	border-top: solid 1px;
+}
+
+div#contenttoc .tocnav .prev {
+	width: 33%;
+	float: left;
+	text-align: left;
+}
+
+div#contenttoc .tocnav .next {
+	width: 33%;
+	float: right;
+	text-align: right;
+}
+
+div#contenttoc ul {
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+div#contenttoc ul li {
+	margin-left: 5px;
+}
+
+div#contenttoc ul li a {
+}
+
+div#contenttoc ul li a:link, div#contenttoc ul li a:visited {
+}
+	
+div#contenttoc ul li a:hover {
+}
+
+div#contenttoc ul li.selected a:link, div#contenttoc ul li.selected a:visited {
+}
+
+div#contenttoc ul li.selected a:hover {
+}
+	
+div#contenttoc ol {
+	list-style-type: decimal;
+	list-style-position: inside;
+}
+
+div#contenttoc ol li {
+	margin-left: 5px;
+}
+	

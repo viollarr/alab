@@ -1,0 +1,257 @@
+2008-07-22 06:43  Fritz Elfert
+
+	* [r1057] i18n/de-DE.mod_avreloaded.ini,
+	  i18n/en-GB.mod_avreloaded.ini, i18n/es-ES.mod_avreloaded.ini,
+	  i18n/fr-FR.mod_avreloaded.ini, i18n/nl-NL.mod_avreloaded.ini,
+	  i18n/pt-BR.mod_avreloaded.ini, i18n/tr-TR.mod_avreloaded.ini,
+	  mod_avreloaded.xml.in:
+	  - Added links to documentation, changelog and demo page
+
+2008-07-17 19:32  Fritz Elfert
+
+	* [r1050] i18n/es-ES.mod_avreloaded.ini:
+	  - Added spanish translation
+
+2008-07-06 22:46  Fritz Elfert
+
+	* [r1028] helper.php:
+	  - Fixed a PHP4 incompatibility
+
+2008-07-06 14:18  Fritz Elfert
+
+	* [r1024] i18n/pl-PL.mod_avreloaded.ini, mod_avreloaded.xml.in:
+	  - Added polish translation, Thanks to Paweł Frankowski
+
+2008-07-03 10:22  Fritz Elfert
+
+	* [r1010] i18n/nl-NL.mod_avreloaded.ini:
+	  - Updated dutch translation
+
+2008-06-27 04:00  Fritz Elfert
+
+	* [r995] helper.php:
+	  - Code cleanup
+
+2008-06-25 19:03  Fritz Elfert
+
+	* [r991] i18n/fr-FR.mod_avreloaded.ini, mod_avreloaded.xml.in:
+	  - Added french translation, thanks to Jonathan Rossel
+
+2008-06-24 00:57  Fritz Elfert
+
+	* [r987] i18n/de-DE.mod_avreloaded.ini,
+	  i18n/es-ES.mod_avreloaded.ini, i18n/nl-NL.mod_avreloaded.ini,
+	  i18n/pt-BR.mod_avreloaded.ini:
+	  - Prepared translations
+
+2008-06-15 12:29  Fritz Elfert
+
+	* [r964] i18n/tr-TR.mod_avreloaded.ini, mod_avreloaded.xml.in:
+	  - Added new translations to manifest.
+
+2008-06-15 12:03  Fritz Elfert
+
+	* [r961] i18n/de-DE.mod_avreloaded.ini,
+	  i18n/en-GB.mod_avreloaded.ini, i18n/es-ES.mod_avreloaded.ini,
+	  i18n/nl-NL.mod_avreloaded.ini, i18n/pt-BR.mod_avreloaded.ini,
+	  i18n/tr-TR.mod_avreloaded.ini:
+	  - Added turkish translation. thanks to Tuna Buyukcaglar
+	  (reyzing@gmail.com)
+	  - Added correct attribution headers in translation files
+
+2008-06-15 00:23  Fritz Elfert
+
+	* [r959] i18n/pt-BR.mod_avreloaded.ini:
+	  - Removed svn:executable attribute
+
+2008-06-09 17:29  Fritz Elfert
+
+	* [r947] helper.php, mod_avreloaded.php:
+	  - Unified all file headers
+
+2008-05-26 01:25  Fritz Elfert
+
+	* [r890] helper.php:
+	  - Fixed popup failure in opera
+
+2008-05-25 20:17  Fritz Elfert
+
+	* [r887] helper.php, i18n/en-GB.mod_avreloaded.ini,
+	  i18n/pt-BR.mod_avreloaded.ini, mod_avreloaded.xml.in:
+	  - Added brasilian translation
+	  - popup in module now using DB rendering
+
+2008-05-12 22:34  Fritz Elfert
+
+	* [r880] helper.php:
+	  - Added tweak for lightbox popup in opera
+
+2008-05-10 14:03  Fritz Elfert
+
+	* [r874] helper.php, mod_avreloaded.xml.in:
+	  - Changes for popup mode
+
+2008-05-07 00:17  Fritz Elfert
+
+	* [r867] Makefile, helper.php, helper2.php, mod_avreloaded.xml.in:
+	  - Added component view for realizing the popup
+	  - Removed helper2 from mod_avreloaded - functionality
+	  is now provided by more versatile component view.
+
+2008-04-30 04:38  Fritz Elfert
+
+	* [r844] Makefile:
+	  - Makefile tweaks
+
+2008-04-30 03:31  Fritz Elfert
+
+	* [r838] i18n/de-DE.mod_avreloaded.ini,
+	  i18n/en-GB.mod_avreloaded.ini, i18n/es-ES.mod_avreloaded.ini,
+	  i18n/nl-NL.mod_avreloaded.ini, mod_avreloaded.xml.in:
+	  - Added insert button in manifest
+	  - Added translations for insert button
+
+2008-04-10 14:23  Fritz Elfert
+
+	* [r794] mod_avreloaded.xml.in:
+	  - Fixed reference of language files in module manifest
+
+2008-04-10 13:35  Fritz Elfert
+
+	* [r792] i18n/es-ES.mod_avreloaded.ini:
+	  - Added spanish translation, thanks to Juan Pablo Fernández
+	  Ramírez
+
+2008-04-07 23:42  Fritz Elfert
+
+	* [r783] i18n/nl-NL.mod_avreloaded.ini, mod_avreloaded.xml.in:
+	  - Added dutch translation
+
+2008-04-07 04:24  Fritz Elfert
+
+	* [r775] Makefile, mod_avreloaded.xml.in:
+	  - Removed beta status
+	  - Make module upradeable without prior uninstall
+
+2008-03-27 01:47  Fritz Elfert
+
+	* [r736] mod_avreloaded.xml.in:
+	  - Added module class suffix parameter
+
+2008-01-23 03:53  Fritz Elfert
+
+	* [r716] Makefile:
+	  - Bumped up version to 1.0beta4
+
+2008-01-22 21:52  Fritz Elfert
+
+	* [r714] i18n/de-DE.mod_avreloaded.ini, mod_avreloaded.xml.in:
+	  - Added german translation.
+
+2008-01-21 18:26  Fritz Elfert
+
+	* [r707] Makefile:
+	  - Added missing ID tag
+
+2008-01-21 18:12  Fritz Elfert
+
+	* [r706] Makefile:
+	  - Bumped up version
+
+2008-01-21 11:23  Fritz Elfert
+
+	* [r705] helper.php:
+	  - Fix: Return false in onclick handler of popup link.
+
+2008-01-20 01:43  Robin Wyllie
+
+	* [r697] i18n/en-GB.mod_avreloaded.ini:
+	  - minor textual changes
+
+2008-01-19 17:17  Fritz Elfert
+
+	* [r695] helper.php, helper2.php, mod_avreloaded.php:
+	  - Pick up parameters from actual module instance in popup.
+	  - Don't reload popup contents if popup is already open.
+
+2008-01-18 17:16  Fritz Elfert
+
+	* [r694] Makefile:
+	  - Bumped up version
+
+2008-01-18 17:15  Fritz Elfert
+
+	* [r693] helper.php, helper2.php, i18n/en-GB.mod_avreloaded.ini,
+	  mod_avreloaded.xml.in:
+	  - Added popup option
+
+2008-01-17 20:18  Fritz Elfert
+
+	* [r691] Makefile:
+	  - Bumped up version to beta1
+
+2008-01-17 20:13  Fritz Elfert
+
+	* [r690] helper.php:
+	  - Change cr/lf's in mediacode to spaces
+
+2008-01-17 18:10  Fritz Elfert
+
+	* [r689] helper.php, i18n/en-GB.mod_avreloaded.ini,
+	  mod_avreloaded.xml.in:
+	  - Renamed videocode param to mediacode
+
+2008-01-10 08:27  Fritz Elfert
+
+	* [r667] Makefile:
+	  - Added zip target
+
+2007-12-31 00:32  Fritz Elfert
+
+	* [r614] Makefile, helper.php, i18n/en-GB.mod_avreloaded.ini,
+	  mod_avreloaded.xml.in:
+	  - Bumped up version
+	  - Added header and footer params (Thanks to Robin Wyllie)
+
+2007-12-29 16:00  Fritz Elfert
+
+	* [r610] .:
+	  - Ignore generated ChangeLog in SVN
+
+2007-12-29 15:59  Fritz Elfert
+
+	* [r609] Makefile:
+	  - Autocreate ChangeLog from SVN
+
+2007-12-29 13:34  Fritz Elfert
+
+	* [r605] helper.php:
+	  - More code cleanup
+
+2007-12-29 13:32  Fritz Elfert
+
+	* [r604] helper.php:
+	  - Code cleanup
+
+2007-12-28 11:25  Fritz Elfert
+
+	* [r601] Makefile, i18n, i18n/en-GB.mod_avreloaded.ini,
+	  mod_avreloaded.xml.in:
+	  - Added translation
+
+2007-12-28 10:51  Fritz Elfert
+
+	* [r599] helper.php, mod_avreloaded.php:
+	  - Use a private event type for calling the plugin.
+
+2007-12-27 07:41  Fritz Elfert
+
+	* [r593] .:
+	  - Added SVN ignore properties
+
+2007-12-27 07:37  Fritz Elfert
+
+	* [r592] ., Makefile, helper.php, index.html, mod_avreloaded.php,
+	  mod_avreloaded.xml.in, tmpl, tmpl/default.php, tmpl/index.html:
+	  - Initial import
+

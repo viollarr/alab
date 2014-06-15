@@ -1,0 +1,17 @@
+	<?xml version="1.0" encoding="UTF-8"?>
+	<install version="1.5" type="plugin" group="jnewsletter" method="upgrade">
+		<name>Load a Module into jNewsletter</name>
+		<author>Joobi Limited</author>
+		<creationDate>July 2010</creationDate>
+		<copyright>© 2010 Joobi Limited. All Rights Reserved</copyright>
+		<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+		<authorEmail>support@ijoobi.com</authorEmail>
+		<authorUrl>http://www.ijoobi.com</authorUrl>
+		<version>1.0.1</version>
+		<description>
+		Load a module into jNews using the tag {module=34} ( in this example 34 is the ID of the module)
+		</description>
+		<files>
+			<filename plugin="module">module.php</filename>
+		</files>
+	</install>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mosinstall type="component" version="1.0.15">
+	<name>jaclplus</name>
+	<author>Vincent Cheah</author>
+	<creationDate>27 April 2008</creationDate>
+	<copyright>Copyright (C) 2005-2008 Vincent Cheah, ByOS Technologies. All rights reserved.</copyright>
+	<license>http://www.byostech.com/copyright/jaclplus.html</license>
+	<authorEmail>jaclplus@byostech.com</authorEmail>
+	<authorUrl>www.byostech.com</authorUrl>
+	<version>1.0.15a</version>
+	<description>JACLPlus Component - Joomla! ACL Enhancements Component for Joomla! 1.0.15 Stable</description>
+	<installfile>install.jaclplus.php</installfile>
+	<uninstallfile>uninstall.jaclplus.php</uninstallfile>
+	<administration>
+		<menu>JACLPlus</menu>
+		<submenu>
+			<menu task="view">User Group Manager</menu>
+			<menu task="listAL">Access Level Manager</menu>
+			<menu task="showConfig">Configuration</menu>
+			<menu task="about">About JACLPlus</menu>
+		</submenu>
+	<files>
+		<filename>admin.jaclplus.php</filename>
+		<filename>admin.jaclplus.html.php</filename>
+		<filename>config.jaclplus.php</filename>
+		<filename>toolbar.jaclplus.php</filename>
+		<filename>toolbar.jaclplus.html.php</filename>
+		<filename>jaclplus.config.php</filename>
+		<filename>jaclplus.class.php</filename>
+		<filename>index.html</filename>
+		<filename>README.txt</filename>
+		<filename>language/english.php</filename>
+		<filename>language/index.html</filename>
+		<filename>patch/admin.categories.php</filename>
+		<filename>patch/admin.sections.php</filename>
+		<filename>patch/admin.trash.php</filename>
+		<filename>patch/admin.users.php</filename>
+		<filename>patch/admin.users.html.php</filename>
+		<filename>patch/auth.php</filename>
+		<filename>patch/categories.searchbot.php</filename>
+		<filename>patch/contact.php</filename>
+		<filename>patch/contacts.searchbot.php</filename>
+		<filename>patch/content.html.php</filename>
+		<filename>patch/content.php</filename>
+		<filename>patch/content.searchbot.php</filename>
+		<filename>patch/frontend.php</filename>
+		<filename>patch/gacl.class.php</filename>
+		<filename>patch/gacl_api.class.php</filename>
+		<filename>patch/index.html</filename>
+		<filename>patch/index.php</filename>
+		<filename>patch/joomla.php</filename>
+		<filename>patch/pathway.php</filename>
+		<filename>patch/pdf.php</filename>
+		<filename>patch/mod_fullmenu.php</filename>
+		<filename>patch/mod_latestnews.php</filename>
+		<filename>patch/mod_logged.php</filename>
+		<filename>patch/mod_mainmenu.php</filename>
+		<filename>patch/mod_mostread.php</filename>
+		<filename>patch/mod_newsflash.php</filename>
+		<filename>patch/mod_quickicon.php</filename>
+		<filename>patch/mod_related_items.php</filename>
+		<filename>patch/mod_sections.php</filename>
+		<filename>patch/newsfeeds.php</filename>
+		<filename>patch/newsfeeds.searchbot.php</filename>
+		<filename>patch/sections.searchbot.php</filename>
+		<filename>patch/weblinks.php</filename>
+		<filename>patch/weblinks.searchbot.php</filename>
+	</files>
+	</administration>
+</mosinstall>

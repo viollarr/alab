@@ -1,0 +1,2 @@
+<?php die("Access Denied"); ?>
+a:2:{s:6:"output";s:0:"";s:6:"result";s:499:"<ul><li access="0" level="1" id="26"><span class="separator"><span><![CDATA[Publicações]]></span></span><ul><li access="0" level="2" id="162"><a href="/pt/publicacoes/anaiscbla"><span><![CDATA[Anais Eletrônicos do CBLA]]></span></a></li><li access="0" level="2" id="27"><a href="/pt/publicacoes/periodicos"><span><![CDATA[Periódicos]]></span></a></li><li access="0" level="2" id="28"><a href="/pt/publicacoes/outros-periodicos"><span><![CDATA[Outros periódicos]]></span></a></li></ul></li></ul>";}

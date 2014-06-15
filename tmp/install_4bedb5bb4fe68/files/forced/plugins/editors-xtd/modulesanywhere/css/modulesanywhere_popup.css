@@ -1,0 +1,27 @@
+/**
+ * Modules Anywhere editor button popup stylesheet
+ *
+ * @package     Modules Anywhere
+ * @version     1.3.4
+ *
+ * @author      Peter van Westen <peter@nonumber.nl>
+ * @link        http://www.nonumber.nl
+ * @copyright   Copyright (C) 2010 NoNumber! All Rights Reserved
+ * @license     http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+.button2-left .hasicon {
+	background: transparent url(../../../../administrator/templates/khepri/images/j_button2_right_cap.png) no-repeat 100% 0;
+}
+.button2-left .hasicon a {
+	background: transparent url(../images/button_right_apply.png) no-repeat 100% 3px;
+	padding-right: 19px !important;
+	margin-right: 3px;
+}
+.button2-left .apply a			{ background-image: url(../images/button_right_apply.png); }
+.button2-left .cancel a 		{ background-image: url(../images/button_right_cancel.png); }
+
+.bar-option {
+	float: left;
+	padding: 0px 20px 0px 0px;
+}

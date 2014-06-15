@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mosinstall type="template" version="1.0.0" client="administrator">
+	<name>JUGA-enabled Admin</name>
+	<creationDate>02/01/2008</creationDate>
+	<author>Dioscouri Design</author>
+	<copyright>GNU/GPL</copyright>
+	<authorEmail>info@dioscouri.com</authorEmail>
+	<authorUrl>http://anonym.to/?www.dioscouri.com</authorUrl>
+	<version>1.0</version>
+	<description>
+	<![CDATA[
+	<div>
+	<h1>"JUGA-Enabled" Admin Template by Dioscouri based on the "Minted One-Point-Five" from Joomlaworks</h1>
+	Use of this template on the Admin side of your website enables JUGA access controls -- You may quickly allow and disallow Administrators access to specific sections of your Admin side.
+	NOTE: You *MUST* have at least JUGA v0.9 installed and *THIS* template defaulted for the JUGA controls to be activated on your Admin side.  JUGA will *NOT* restrict access to content unless this template is in use.
+	<br /><br />
+	This template is inspired by Joomla 1.5's administrator template 'Khepri' -created by <a target="_blank" href="http://www.joomla.org">Andy Miller</a> and released under the GNU/GPL license- and the very famous statistics package 'Mint' designed and created by <a target="_blank" href="http://www.haveamint.com">Shaun Inman</a>.<br /><br />
+	For more info on this template, please visit <a target="_blank" href="http://anonym.to/?http://www.dioscouri.com">Dioscouri Design</a>.<br /><br /><i>(Version 1.0 - Created on 01 February 2008)</i></div>
+	]]>
+	</description>
+	<files>
+		<filename>cpanel.php</filename>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>login.php</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>js/hideloading.js</filename>
+		<filename>js/index.html</filename>
+		<filename>js/stoploading.js</filename>
+		<filename>lang/en.php</filename>
+		<filename>lang/el.php</filename>
+		<filename>lang/index.html</filename>
+	</files>
+	<images>
+		<filename>images/activity.gif</filename>
+		<filename>images/dotted_line.gif</filename>
+		<filename>images/header_bg.png</filename>
+		<filename>images/header_bg_l.png</filename>
+		<filename>images/header_bg_r.png</filename>
+		<filename>images/header_text.png</filename>
+		<filename>images/header_text_nojoomla.png</filename>
+		<filename>images/home.png</filename>
+		<filename>images/index.html</filename>
+		<filename>images/info.png</filename>
+		<filename>images/install.png</filename>
+		<filename>images/locked_area_m15.jpg</filename>
+		<filename>images/login_l.png</filename>
+		<filename>images/login_r.png</filename>
+		<filename>images/showinfo.png</filename>
+		<filename>images/x.gif</filename>
+	</images>
+	<css>
+		<filename>css/tabpane.css</filename>
+		<filename>css/template_css.css</filename>
+		<filename>css/theme.css</filename>
+		<filename>css/index.html</filename>
+	</css>
+</mosinstall>

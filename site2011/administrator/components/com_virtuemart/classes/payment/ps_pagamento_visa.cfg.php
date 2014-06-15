@@ -1,0 +1,22 @@
+<?php if( !defined( '_VALID_MOS' ) && !defined( '_JEXEC' ) ) die( 'Direct Access to '.basename(__FILE__).' is not allowed.' ); 
+
+define ('PGV_MODO_TESTE', 'false');
+define ('PGV_AFILIACAO_TESTE', '');
+define ('PGV_CHAVE_TESTE', '');
+define ('PGV_URL_RETORNO_TESTE', '');
+define ('PGV_AFILIACAO', '1036464064');
+define ('PGV_CHAVE', '08e3ffc7923b5a4c1d41409d3e9e1cce0c089f321f947d3d08a808ee53d18a5d');
+define ('PGV_URL_RETORNO', 'http://alab.org.br/site2011/administrator/components/com_virtuemart/classes/payment/pagamento_visa/retorno_visa.php');
+define ('PGV_VALOR_MINIMO_PARCELA', '10');
+define ('PGV_LIMITE_PARCELAMENTO_SEM_JUROS', '1');
+define ('PGV_LIMITE_PARCELAMENTO', '1');
+define ('PGV_PARCELAMENTO_JUROS', '04');
+define ('PGV_AUTORIZAR', '2');
+define ('PGV_CAPTURAR', 'true');
+define ('PGV_TAXA_CREDITO', '');
+define ('PGV_TAXA_PARCELADO', '');
+define ('PGV_TAXA_DEBITO', '');
+define ('PGV_TRANSACAO_CONCLUIDA', 'C');
+define ('PGV_TRANSACAO_NAO_FINALIZADA', 'P');
+define ('PGV_TRANSACAO_CANCELADA', 'X');
+define ('PGV_CARTOES_ACEITOS', 'a:5:{i:0;s:4:"visa";i:1;s:6:"master";i:2;s:3:"elo";i:3;s:6:"diners";i:4;s:8:"discover";}');

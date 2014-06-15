@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+    <mosinstall type="component">
+        <name>Mamboleto</name>
+        <creationDate>Setembro, 2008</creationDate>
+        <author>Fernando Soares</author>
+        <copyright>Livre - GNU/GPL</copyright>
+        <authorEmail>fsoares@fsoares.com.br</authorEmail>
+        <authorUrl>http://www.fernandosoares.com.br/</authorUrl>
+        <version>2.0 - RC3</version>
+        <files>  
+            <filename>mamboleto.php</filename>
+        </files>
+        <install>
+            <queries>
+                <query>
+                    DROP TABLE IF EXISTS `#__mblto_bancos`;
+                </query>
+                <query>
+                    CREATE TABLE `#__mblto_bancos` (
+  `bnid` smallint(3) unsigned NOT NULL auto_increment,
+  `layout` varchar(40) NOT NULL default '',
+  `nome` varchar(20) NOT NULL default '',
+  `codigo` int(4) unsigned NOT NULL default '0',
+  `uso_do_banco` varchar(50) NOT NULL default '',
+  PRIMARY KEY  (`bnid`),
+  UNIQUE KEY `nome` (`nome`),
+  KEY `bnid` (`bnid`)
+) TYPE=MyISAM;
+                </query>
+
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (1, 'class.banco.unibanco.php', 'UNIBANCO', 409, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (2, 'class.banco.hsbc.php', 'HSBC', 399, '');
+                </query>
+
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (3, 'class.banco.bradesco.php', 'Bradesco', 237, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (4, 'class.banco.santander.php', 'Santander', 033, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (5, 'class.banco.cef.php', 'Caixa Econ. Federal', 104, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (6, 'class.banco.bancodobrasil.php', 'Banco do Brasil', 1, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (7, 'class.banco.itau.php', 'Banco Itaú S.A.', 341, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (8, 'class.banco.banrisul.php', 'BANRISUL', 41, '');
+                </query>
+
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (9, 'class.banco.real.php', 'Banco Real', 356, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (10, 'class.banco.mercantil.php', 'Banco Mercantil', 389, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (11, 'class.banco.sicredi.php', 'SICREDI', 748, '');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_bancos` VALUES (12, 'class.banco.bancoob.php', 'Bancoob', 756, '');
+                </query>
+
+
+                <query>
+                    DROP TABLE IF EXISTS `#__mblto_boletos`;
+                </query>
+                <query>
+                    CREATE TABLE `#__mblto_boletos` (
+  `bid` int(4) unsigned NOT NULL auto_increment,
+  `bnid` int(4) unsigned NOT NULL default '0',
+  `cid` int(4) unsigned NOT NULL default '0',
+  `titulo` varchar(30) NOT NULL default '',
+  `agencia` varchar(10) NOT NULL default '',
+  `agencia_dig` char(2) default NULL,
+  `cedente` varchar(255) NOT NULL default '',
+  `conta_cedente` varchar(20) NOT NULL default '',
+  `conta_cedente_dig` char(2) default NULL,
+  `especie_documento` varchar(10) NOT NULL default '',
+  `codigo` varchar(40) NOT NULL default '',
+  `local_pagamento` varchar(255) NOT NULL default '',
+  `carteira` varchar(30) NOT NULL default '',
+  `instrucoes_linha1` varchar(200) NOT NULL default '',
+  `instrucoes_linha2` varchar(200) NOT NULL default '',
+  `instrucoes_linha3` varchar(200) NOT NULL default '',
+  `instrucoes_linha4` varchar(200) NOT NULL default '',
+  `instrucoes_linha5` varchar(200) NOT NULL default '',
+  `demons1` varchar(200) default NULL,
+  `demons2` varchar(200) default NULL,
+  `demons3` varchar(200) default NULL,
+  `demons4` varchar(200) default NULL,
+  `convenio` varchar(15) default NULL,
+  PRIMARY KEY  (`bid`),
+  UNIQUE KEY `titulo` (`titulo`),
+  KEY `cid` (`cid`)
+) TYPE=MyISAM;
+                </query>
+
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (1, 1, 1, 'Boleto Unibanco', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', 'ESP.', 'Pague preferêncialmente nas agências do Unibanco.', 'Após o vencimento, pagável somente nas agências do Unibanco mediante consulta no sistema VC.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (2, 2, 1, 'Boleto HSBC', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', 'CNR', 'Pague preferêncialmente nas agências do Banco HSBC.', 'Após o vencimento, pagável somente nas agências do Banco HSBC.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (3, 3, 1, 'Boleto Bradesco', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', '06', 'Pague preferêncialmente nas agências do Banco Bradesco.', 'Após o vencimento, pagável somente nas agências do Banco Bradesco.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (4, 4, 1, 'Boleto Santander', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', 'COB', 'Pague preferêncialmente nas agências do Banco Santander.', 'Após o vencimento, pagável somente nas agências do Banco Santander.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (5, 5, 1, 'Boleto CEF', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', 'SR', 'Pague preferêncialmente nas agências da Caixa Econômica Federal.', 'Após o vencimento, pagável somente nas agências da Caixa Econômica Federal.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (6, 6, 1, 'Boleto BB', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', 'x', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', '18', 'Pague preferêncialmente nas agências do Banco do Brasil.', 'Após o vencimento, pagável somente nas agências do Banco do Brasil.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (7, 7, 1, 'Boleto Itaú', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '6', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', '175', 'Pague preferêncialmente nas agências do Banco Itaú.', 'Após o vencimento, pagável somente nas agências do Banco Itaú.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (8, 8, 1, 'Boleto Banrisul', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '6', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', 'DM', 'Pague preferêncialmente nas agências do Banrisul.', 'Após o vencimento, pagável somente nas agências do Banrisul.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (9, 9, 1, 'Boleto Real', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', '20', 'Pague preferêncialmente nas agências do Banco Real.', 'Após o vencimento, pagável somente nas agências do Banco Real.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (10, 10, 1, 'Boleto Mercantil', '1234', '1', 'NOME DE SUA EMPRESA', '12345678', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', '06', 'Pague preferêncialmente nas agências do Banco Mercantil.', 'Após o vencimento, pagável somente nas agências do Banco Mercantil.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '123456');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (11, 11, 1, 'Boleto Sicredi', '1234', '1', 'NOME DE SUA EMPRESA', '12', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', '1', 'Pague preferêncialmente nas agências do Sicredi.', 'Após o vencimento, pagável somente nas agências do Sicredi.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '12345');
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_boletos` VALUES (12, 12, 1, 'Boleto Bancoob', '1234', '1', 'NOME DE SUA EMPRESA', '12', '0', 'DM', '1', 'Até o vencimento em qualquer agência bancária ou lotérica.', '1', 'Pague preferêncialmente nas agências do Bancoob.', 'Após o vencimento, pagável somente nas agências do Bancoob.', '', '', '', 'Seu pedido será encaminhado após a confirmação de pagamento deste Boleto Bancário.', '', 'Consulte seu pedido em http://www.seusite.com.br', '', '1234567');
+                </query>
+
+                <query>
+                    DROP TABLE IF EXISTS `#__mblto_config`;
+                </query>
+                <query>
+                    CREATE TABLE `#__mblto_config` (
+  `cid` smallint(3) unsigned NOT NULL auto_increment,
+  `titulo` varchar(30) NOT NULL default '',
+  `enviar_email` tinyint(1) unsigned NOT NULL default '0',
+  `remetente` varchar(50) NOT NULL default '',
+  `remetente_email` varchar(255) NOT NULL default '',
+  `assunto` varchar(50) NOT NULL default '',
+  `servidor_smtp` varchar(80) NOT NULL default '',
+  `servidor_http` varchar(200) NOT NULL default '',
+  `imagem_tipo` varchar(4) NOT NULL default '',
+  `usar_truetype` tinyint(1) unsigned NOT NULL default '1',
+  `enviar_pdf` tinyint(1) unsigned NOT NULL default '0',
+  `mensagem_texto` longtext NOT NULL,
+  `mensagem_html` longtext NOT NULL,
+  PRIMARY KEY  (`cid`),
+  UNIQUE KEY `titulo` (`titulo`)
+) TYPE=MyISAM;
+                </query>
+                <query>
+                    INSERT INTO `#__mblto_config` VALUES (1, 'Mamboleto', 1, 'Nome de sua loja', 'seu@email.com.br', 'Boleto Bancário do seu Pedido', 'smtp.mail.yahoo.com.br', '/administrator/components/com_mamboleto/imagens/logo.png', 'jpg', 1, 0, 'Boleto bancário Mamboleto.', '<b>Boleto bancário Mamboleto.</b>');    
+                </query>
+            </queries>
+        </install>
+        <uninstall>
+            <queries>
+              <query>
+                    DROP TABLE IF EXISTS `#__mblto_config`;
+                </query>
+               <query>
+                    DROP TABLE IF EXISTS `#__mblto_boletos`;
+                </query>
+                <query>
+                    DROP TABLE IF EXISTS `#__mblto_bancos`;
+                </query>                  
+           </queries>
+        </uninstall>
+
+        <installfile>install.mamboleto.php</installfile>
+
+        <uninstallfile>uninstall.mamboleto.php</uninstallfile>
+
+        <administration>
+            <menu task="inicio">Mamboleto</menu>
+            <files>
+                <filename>admin.mamboleto.php</filename>
+                <filename>bancos.php</filename>
+                <filename>boletos.php</filename>
+                <filename>config.php</filename>
+                <filename>configuracoes.php</filename>
+                <filename>principal.php</filename>
+                <filename>revisar_boleto.php</filename>
+                <filename>ajuda.php</filename>
+                <filename>templates.php</filename>
+                <filename>config/bancos.ini.php</filename>
+                <filename>config/boletos.ini.php</filename>
+                <filename>config/configs.ini.php</filename>
+                <filename>config/estilo.css</filename>
+                <filename>config/log_de_erros.txt</filename>
+                <filename>config/phpboleto.ini.php</filename>
+
+                <filename>config/mamboleto.ini.php</filename>
+
+                <filename>imagens/barra_branca.gif</filename>
+                <filename>imagens/barra_preta.gif</filename>
+                <filename>imagens/boleto.gif</filename>
+                <filename>imagens/boleto.jpeg</filename>
+                <filename>imagens/boleto.png</filename>
+                <filename>imagens/espaco.gif</filename>
+                <filename>imagens/logo.png</filename>
+                <filename>imagens/001-9.gif</filename>
+                <filename>imagens/341-7.gif</filename>
+                <filename>imagens/237-2.gif</filename>
+                <filename>imagens/104-0.gif</filename>
+                <filename>imagens/041-8.gif</filename>
+                <filename>imagens/033-7.gif</filename>
+
+                <filename>imagens/356-5.gif</filename>
+                <filename>imagens/389-1.gif</filename>
+                <filename>imagens/399-9.gif</filename>
+                <filename>imagens/409-0.gif</filename>
+                <filename>imagens/748-X.gif</filename>
+                <filename>imagens/756-0.gif</filename>
+
+                <filename>imagens/001.jpg</filename>
+                <filename>imagens/341.jpg</filename>
+                <filename>imagens/237.jpg</filename>
+                <filename>imagens/104.jpg</filename>
+
+                <filename>imagens/041.jpg</filename>
+                <filename>imagens/033.jpg</filename>
+                <filename>imagens/356.jpg</filename>
+                <filename>imagens/389.jpg</filename>
+                <filename>imagens/399.jpg</filename>
+                <filename>imagens/409.jpg</filename>
+                <filename>imagens/748.jpg</filename>
+                <filename>imagens/756.jpg</filename>
+
+                <filename>imagens/mamboletop.gif</filename>
+                <filename>imagens/mamboleto.gif</filename>
+                <filename>imagens/mamboleto.png</filename>
+                <filename>imagens/menu_icon_mbt.png</filename>
+
+                <filename>imagens/support.png</filename>
+                <filename>imagens/config.png</filename>
+                <filename>imagens/cpanel.png</filename>
+                <filename>imagens/addedit.png</filename>
+
+                <filename>include/class.boleto.php</filename>
+                <filename>include/class.db.php</filename>
+                <filename>include/class.grava_erro.php</filename>
+                <filename>include/class.html.mime.mail.php</filename>
+                <filename>include/class.ini.php</filename>
+                <filename>include/class.pdf.php</filename>
+                <filename>include/class.smtp.php</filename>
+                <filename>include/comum.php</filename>
+                <filename>include/functions.js</filename>
+                <filename>include/functions_boleto.js</filename>
+                <filename>include/pre.php</filename>
+                <filename>include/boletos/class.compatibilidade.php</filename>
+                <filename>include/boletos/class.comum.php</filename>
+                <filename>include/boletos/class.email.php</filename>
+                <filename>include/boletos/class.html.php</filename>
+                <filename>include/boletos/class.imagem.php</filename>
+                <filename>include/boletos/class.pdf.php</filename>
+                <filename>include/boletos/class.postscript.php</filename>
+                <filename>include/boletos/class.svg.php</filename>
+                <filename>include/boletos/bancos/class.banco.bancodobrasil.php</filename>
+                <filename>include/boletos/bancos/class.banco.bradesco.php</filename>
+                <filename>include/boletos/bancos/class.banco.cef.php</filename>
+                <filename>include/boletos/bancos/class.banco.santander.php</filename>
+                <filename>include/boletos/bancos/class.banco.itau.php</filename>
+                <filename>include/boletos/bancos/class.banco.banrisul.php</filename>
+
+                <filename>include/boletos/bancos/class.banco.real.php</filename>
+                <filename>include/boletos/bancos/class.banco.mercantil.php</filename>
+                <filename>include/boletos/bancos/class.banco.hsbc.php</filename>
+                <filename>include/boletos/bancos/class.banco.unibanco.php</filename>
+                <filename>include/boletos/bancos/class.banco.sicredi.php</filename>
+                <filename>include/boletos/bancos/class.banco.bancoob.php</filename>
+
+                <filename>include/boletos/bancos/class.banco.comum.php</filename>                
+                <filename>include/db/class.banco.php</filename>
+                <filename>include/db/class.comum.php</filename>
+                <filename>include/db/class.ini.php</filename>
+                <filename>include/pear/DB.php</filename>
+                <filename>include/pear/PEAR.php</filename>
+                <filename>include/pear/DB/common.php</filename>
+                <filename>include/pear/DB/fbsql.php</filename>
+                <filename>include/pear/DB/ibase.php</filename>
+                <filename>include/pear/DB/ifx.php</filename>
+                <filename>include/pear/DB/msql.php</filename>
+                <filename>include/pear/DB/mssql.php</filename>
+                <filename>include/pear/DB/mysql.php</filename>
+                <filename>include/pear/DB/oci8.php</filename>
+                <filename>include/pear/DB/odbc.php</filename>
+                <filename>include/pear/DB/pgsql.php</filename>
+                <filename>include/pear/DB/storage.php</filename>
+                <filename>include/pear/DB/sybase.php</filename>
+                <filename>include/templates/template.html.php</filename>
+                <filename>include/templates/template.pdf.php</filename>
+                <filename>include/templates/template.svg.php</filename>                
+            </files>
+        </administration>
+    </mosinstall>

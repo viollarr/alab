@@ -1,0 +1,4 @@
+<?php die("Access Denied"); ?>
+a:2:{s:6:"output";s:0:"";s:6:"result";s:670:"		<div class="moduletable">
+					<ul class="menu"><li class="parent item29"><span class="separator"><span>Eventos</span></span><ul><li class="item112"><a href="/pt/eventos/galeria-de-fotos"><span>Galeria de Fotos</span></a></li><li class="item30"><a href="/pt/eventos/i-crla"><span>I CRLA</span></a></li><li class="item115"><a href="/pt/eventos/ii-coloquio-regional-de-linguistica-aplicada"><span>II Colóquio Regional de Linguística Aplicada</span></a></li><li class="item111"><a href="/pt/eventos/ix-cbla"><span>IX CBLA</span></a></li><li class="item116"><a href="/pt/eventos/queering-paradigms-iv"><span>Queering Paradigms IV</span></a></li></ul></li></ul>		</div>
+	";}

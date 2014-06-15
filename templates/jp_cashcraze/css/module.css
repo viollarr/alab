@@ -1,0 +1,121 @@
+/* MODULE RIGHT & LEFT BASIC STYLE
+--------------------------------------------------------- */
+
+#left div.module_menu h3,
+#left div.module_text h3,
+#left div.module h3,
+#right div.module_menu h3,
+#right div.module_text h3,
+#right div.module h3{
+	text-align:left;
+	border-top:3px solid #eee;
+	border-bottom:1px solid #eee;
+	padding:10px 0 10px 0;
+}
+
+#left div.module_hot,
+#left div.module_new,
+#left div.module_menu,
+#left div.module_text,
+#left div.module{
+	background-color:#fff; margin-bottom:30px; line-height:1.4;
+}
+
+#right div.module_menu,
+#right div.module_text,
+#right div.module{
+	background:#fff; margin-bottom:30px;line-height:1.4
+}
+
+/* MODULE USER 1 2 3
+--------------------------------------------------------- */
+
+.usertop div.module_menu h3,
+.usertop div.module_text h3,
+.usertop div.module h3{
+	text-align:left;
+	margin-bottom:14px;
+	border-top:1px solid #eee;
+	padding-top:14px;
+	color:#ff9c00;
+
+}
+.usertop div.module_hot,
+.usertop div.module_new,
+.usertop div.module_menu,
+.usertop div.module_text,
+.usertop div.module{
+	padding:0 10px 0 10px ; line-height:1.4;margin:10px;
+}
+/* MODULE USER 4 5 6
+--------------------------------------------------------- */
+
+.userbottom div.module_menu h3,
+.userbottom div.module_text h3,
+.userbottom div.module h3{
+	border-bottom:1px solid #eee;
+	padding:10px 0 10px 0;
+	margin-bottom:14px;
+
+}
+.userbottom div.module_hot,
+.userbottom div.module_new,
+.userbottom div.module_menu,
+.userbottom div.module_text,
+.userbottom div.module{
+	padding:10px; line-height:1.4;margin:10px;
+}
+
+/* MODULE USER Before & After
+--------------------------------------------------------- */
+
+.before_after div.module_menu h3,
+.before_after div.module_text h3,
+.before_after div.module h3{
+	text-align:left;
+	margin-bottom:14px;
+
+}
+
+.before_after div.module_hot,
+.before_after div.module_new,
+.before_after div.module_menu,
+.before_after div.module_text,
+.before_after div.module{
+	line-height:1.4;
+}
+
+/* MODULE Slider
+--------------------------------------------------------- */
+.slide_module p{line-height:1.5; margin-bottom:4px}
+.slide_module .readmore {margin-top:6px;}
+.slide h1, .slide h3{
+	margin-top:20px;
+}
+
+.slide h3{
+color:#2B7FB5;
+}
+.slide .readon, .slide .readmore {
+	padding: 5px 10px;
+	background:#ff9c00;
+	color: #fff;
+	font-size: 90%;
+	border:none;
+}
+
+.jdGallery .slideInfoZone h2{
+	border-bottom:none;}
+	
+/* MODULE FOOTER
+--------------------------------------------------------- */
+#footer div.module_menu,
+#footer div.module_text,
+#footer div.module{
+	font-size:100%;
+	margin-bottom:10px;
+
+}
+
+
+

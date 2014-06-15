@@ -1,0 +1,23 @@
+<config>
+    <params>
+        <param type="spacer" label="" default="General" description="" name="@spacer" />
+        <param type="text" name="folder" label="Folder" default="" description="Initial folder (e.g. &lt;b&gt;holiday/2001&lt;/b&gt;)&lt;br&gt;Leave empty if you are not sure" class="" size="" />
+        <param type="list" name="style" label="Style" default="light" description="Sets the style of the gallery">
+            <option value="none">None</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+        </param>
+
+        <param type="spacer" label="" default="Thumbnails" description="" name="@spacer" />
+        <param type="radio" name="add_inline_css" label="Add inline CSS" default="1" description="">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </param>
+        <param type="text" name="tn_width" label="Width" default="150" description="Applies only if 'Add inline CSS' is Yes" class="" size="" />
+        <param type="text" name="tn_height" label="Height" default="150" description="Applies only if 'Add inline CSS' is Yes" class="" size="" />
+
+	  <param type="spacer" label="" default="Lightbox system" description="" name="@spacer" />
+	  <param type="text" name="rel" label="Relation (rel)" default="" description="Relation to the lightbox system &lt;br&gt;(e.g. &lt;b&gt;rokbox&lt;/b&gt;)&lt;br&gt; Leave empty if you don't know (slimbox will then be used)" class="" size="" />
+
+    </params>
+</config>

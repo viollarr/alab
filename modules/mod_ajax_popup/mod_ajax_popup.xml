@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>AJAX Soft Fade-In Popup</name>
+	<author>Dominik Gorczyca, mediahof, Kiel-Germany</author>
+	<creationDate>May 2008</creationDate>
+	<copyright>(C) 2008 mediahof. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>mail@mediahof.de</authorEmail>
+	<authorUrl>www.mediahof.de</authorUrl>
+	<version>1.5.2</version>
+	<description>DESCRIPTION</description>
+	<files>
+		<filename module="mod_ajax_popup">mod_ajax_popup.php</filename>
+	</files>
+	<languages folder="lang">
+		<language tag="en-GB">en-GB.mod_ajax_popup.ini</language>
+		<language tag="pl-PL">pl-PL.mod_ajax_popup.ini</language>
+		<language tag="de-DE">de-DE.mod_ajax_popup.ini</language>
+	</languages>
+	<params addpath="/administrator/components/com_content/elements">
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="contentid" type="article" label="CONTENTID" description="CONTENTID_DESCRIPTION" />
+		<param name="positionLeft" type="text" label="POSITIONLEFT" description="POSITIONLEFT_DESCRIPTION" default="25" />
+		<param name="positionTop" type="text" label="POSITIONTOP" description="POSITIONTOP_DESCRIPTION" default="25" />
+		<param name="width" type="text" label="WIDTH" description="WIDTH_DESCRIPTION" default="250" />
+		<param name="height" type="text" label="HEIGHT" description="HEIGHT_DESCRIPTION" default="250" />
+		<param name="fadeTime" type="text" label="FADETIME" description="FADETIME_DESCRIPTION" default="10" />
+		<param name="fadeStep" type="text" label="FADESTEP" description="FADESTEP_DESCRIPTION" default="1" />
+  </params>
+	<params group="advanced">
+	<param name="titleHide" type="radio" default="1" label="TITLEHIDE" description="TITLEHIDE_DESCRIPTION">
+		<option value="1">Hide</option>
+		<option value="0">Show</option>
+	</param>
+    <param name="titleText" type="text" label="TITLETEXT" description="TITLETEXT_DESCRIPTION" default="Close" />
+	<param name="titleColor" type="text" label="TITLECOLOR" description="TITLECOLOR_DESCRIPTION" default="#fff" />
+	<param name="titleBG" type="text" label="TITLEBG" description="TITLEBG_DESCRIPTION" default="#88080b" />
+    <param name="titleHeight" type="text" label="TITLEHEIGHT" description="TITLEHEIGHT_DESCRIPTION" default="25" />
+	<param name="appear" type="text" label="APPEAR" description="APPEAR_DESCRIPTION" default="1000" />
+  </params>
+</install>

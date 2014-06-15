@@ -1,0 +1,4 @@
+<?php die("Access Denied"); ?>
+a:2:{s:6:"output";s:0:"";s:6:"result";s:588:"		<div class="moduletable">
+					<ul class="menu"><li class="parent item21"><span class="separator"><span>Notícias</span></span><ul><li class="item20"><a href="/pt/noticias/destaque"><span>Destaques</span></a></li><li class="item23"><a href="/pt/noticias/evento"><span>Eventos</span></a></li><li class="item24"><a href="/pt/noticias/publicacoes"><span>Publicações</span></a></li><li class="item108"><a href="/pt/noticias/concursos"><span>Concursos</span></a></li><li class="item109"><a href="/pt/noticias/outras-noticias"><span>Outras Notícias</span></a></li></ul></li></ul>		</div>
+	";}

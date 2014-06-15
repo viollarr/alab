@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<title>Joomleto Help file</title>
+            <meta name="title" content="Joomleto Help file" />
+            <meta name="author" content="Douglas Machado" />
+			<link rel="stylesheet" href="../css/template_css.css" type="text/css" />
+			<link rel="shortcut icon" href="images/favicon.ico" />
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+			<meta name="robots" content="noindex, nofollow" />
+        </head>
+    <body>
+        <div class="contentpane">
+            <div class="componentheading"> Joomleto - Solução em boletos</div>
+            <p>
+                <span class="dropcap">J</span>oomleto é um componente para o Joomla baseado no
+                <span class="highlight"><a href="http://www.boletophp.com.br" title="Site do BoletoPHP">BoletoPHP</a></span>
+                <br />
+                O pessoal do BoletoPHP é bem ativo e atualmente o BoletoPHP já está desenvolvido para sete bancos e tem mais
+                sete em desenvolvimento pela comunidade. Já é compatível com o OsCommerce.   <br />
+                A intenção é usar totalmente o Framework do Joomla, o que torna o componente mais fácil de fazer e muito mais
+                fácil de fazer um upgrade quando sair novas versões para o Joomla!
+            </p>
+            <div class="contentheading">Particularidades do Joomleto</div>
+                <ul>
+                    <li>Foi escolido usar o email contido no usuário Joomla! como email padrão pois este email, teóricamente, é um email válido,
+                        pois o usuário tem que cadastrar-se, a não ser que algum administrador tenha cadastrado!</li>
+                    <li>Na opção de boletos após o boleto ter sido pago não é mais possível enviar email para o cliente,
+                        nem ver o boleto gerado</li>
+                    <li>Uso de arquivo de idioma: Não é necessário devido ao sistema de boleto funcionar só no Brasil
+                        (me corrigam se estiver errado), porém fica mais fácil para mudar alguma palavra e não se sabe
+                         onde que ela está!</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </p>
+            <a name="todo.html"></a>
+            <div class="contentheading">Todo List</div>
+                <ul>
+                    <li class="error">O pageNav não está funcionando em nenhuma das páginas! Não sei o porque :(</li>
+                    <li>Criar opção de enviar email para o cliente quando é gerado o boleto</li>
+                    <li>Desenvolver de melhor forma o formulário para edição de boletos para carregar o nome do cliente,
+                     talvez fazendo uso de AJAX (possivel uso de caixa do tipo 'Google Suggest')</li>
+                     <li>Fazer uso do <a href="http://dev.joomla.org/component/option,com_jd-wp/Itemid,33/p,267/" target="_blank">Mootools</a>
+                     para desenvolver alguma coisa em ajax, veja o porque no
+                     <a href="http://dev.joomla.org/component/option,com_jd-wp/Itemid,33/p,267/" target="_blank">J! Developer Network</a>
+                     </li>
+                    <li>Uso de Ajax para carregar as cidades após carregar os estados (formulário de edição de clientes)</li>
+                    <li>Criar PDF, ao enviar email</li>
+                    <li>Criar um arquivo de configuração com os dados da empresa (razão social, CNPJ, ...) e outros parametros
+                    como:<ul>
+                        <li>Tamanho máximo permitido para cada campo (CNPJ, Nosso número,...)</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        </ul>
+                    </li>
+                    <li></li>
+                    <li><span class="tips">Criar logo para o Joomleto!</span></li>
+                    <li></li>
+                    <li class="error">Algumas palavras não constam no arquivo de idiomas, estão 'hardcoded' :(
+                    Não há uma necessidade real de colocar em um arquivo de idioma, porém seria legal! :^)</li>
+                </ul>
+            <div class="contentheading">Modificações no BoletoPHP</div>
+            <small>Nos arquivos include/funcoes_NOME_DO_BANDO.php e include/layout_NOME_DO_BANDO.php em todo o lugar onde
+            fazia uma referência a um arquivo como
+                <pre>src=imagens/p.gif width=<?=$f1?> height=<?=$altura?> border=0></pre>
+                Foi adicionado  uma constante criada em outro arquivo com a URL do site
+                <pre>_SITE_PATH</pre>
+                Ficando assim:
+                <pre>src=_SITE_PATHimagens/p.gif width=<?=$f1?> height=<?=$altura?> border=0></pre>
+                <br />Adicionado a posição bank no array $dadosboleto
+                <pre>$dadosboleto["bank"]    = $boleto->bco_nome_arquivo; </pre>
+                e será usado para escolher o banco:
+                <pre>include($pathCom."include/funcoes_".$dadosboleto["bank"].".php"); <br />include($pathCom."include/layout_".$dadosboleto["bank"].".php"); </pre>
+            </small>
+            <div class="contentheading"> Ligações Externas</div>
+               <small><span class="message">  Visitem: </span>
+                    <ul>
+                        <li><a href="http://focalizar.com.br" title="Sua empresa em evidência">
+                            Focalizar.com.br Publicidade Inteligente na Internet</a></li>
+                        <li><a href="http://gracamaior.com.br" title="Um compromisso com a verdade">
+                            Graça Maior - Estudos Bíblicos</a></li>
+                        <li></li>
+                </ul>
+                </small>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+/*  jNews module CSS*/
+div.module_gray {
+	margin-bottom: 10px;
+	background: transparent url(../skin/gray/topright.png) 100% 0 no-repeat;
+	height: 1%;
+}
+div.module_gray div {
+	background: transparent url(../skin/gray/topleft.png) 0 0 no-repeat;
+}
+div.module_gray div div {
+	background: transparent url(../skin/gray/botright.png) 100% 100% no-repeat;
+}
+div.module_gray div div div {
+	background: transparent url(../skin/gray/botleft.png) 0 100% no-repeat;
+	padding: 12px 15px 15px 15px;
+}
+div.module_gray div div div div {
+	background: transparent none;
+	padding: 0;
+}
+div.module_gray h3{
+    color: #333333;
+}
+div#aca_clickcontainer span {
+    font-size: 15px;
+    color: #333333;
+}
+span.aca_list_name  a{
+    color: #595959;
+}
+
+div#acamoduletoggle, div.aca_module {
+    color: #333333;
+}
+
+div#acamoduletoggle input[type="text"], div.aca_module input[type="text"] {
+    color: #333333;
+    border: 1px solid #CCC;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:transparent url(../skin/green/bg-input.gif) repeat-x scroll left top;
+	margin:0 0 5px;
+	padding:3px;
+	width:95%;
+}
+div.aca_module p.jnews-nolist {
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	font-family: Helvetica, sans-serif, arial;
+}

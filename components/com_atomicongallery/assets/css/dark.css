@@ -1,0 +1,38 @@
+#atomicongallery .folder_up {
+	background: none;
+}
+
+#atomicongallery .folder,
+#atomicongallery .file {
+    -webkit-border-radius: 10px;    /* for Safari */
+    -webkit-box-shadow: 0px 0px 5px white;
+    -moz-border-radius: 10px;       /* for Firefox */
+    -moz-box-shadow: 0px 0px 5px white;
+    border-radius: 10px;       /* for CSS3 */
+    box-shadow: 0px 0px 5px white;
+}
+#atomicongallery .folder:hover,
+#atomicongallery .file:hover {
+    -webkit-box-shadow: 0px 0px 10px #FF9900;
+    -moz-box-shadow: 0px 0px 10px #FF9900;
+    box-shadow: 0px 0px 10px #FF9900;
+}
+
+#atomicongallery .folder {
+	background: #000000 url('../images/dark/folder-bg.png') repeat-x scroll top left;
+}
+
+#atomicongallery .folder_up a,
+#atomicongallery .folder a {
+	color: #d0d0d0;
+}
+
+#atomicongallery .folder .info .description {
+    color: #a0a0a0;
+}
+
+#atomicongallery .file {
+    background: #000000 url('../images/dark/file-bg.png') repeat-x scroll top left;
+    margin-right: 10px;
+	margin-bottom: 10px;
+}

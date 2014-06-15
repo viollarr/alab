@@ -1,0 +1,34 @@
+<?php
+defined( '_VALID_MOS' ) or die( 'Direct Access to this location is not allowed. [ <a href="http://www.byostech.com/jaclplus">JACLPlus Component for Joomla! 1.0.15 Stable</a> ]' );
+
+class jaclConfig
+{
+// Last Edit: Fri, 2008-Feb-27 
+// Edited by: admin
+var $jaclplus_version = "1.0.15a";
+var $jaclplus_url = "http://www.byostech.com";
+var $smart_update = "To be implemented...";
+var $control_panel = "1";
+var $content_nonlogin = "0";
+var $content_noneditable = "0";
+var $publish_frontpage = "1";
+var $publish_alstype = "1";
+var $publish_jaclplus = "0,1";
+var $enable_jaclplus = "1";
+var $edit_section = "1";
+var $edit_category = "1";
+var $show_ugstat = "1";
+var $show_alstat = "1";
+var $limit_editown = "0";
+var $limit_edit = "0";
+var $require_publish = "0";
+var $noauth_link = "#";
+var $noauth_text = "Upgrade to read more...";
+var $edit_accessonly = "1";
+var $auto_disablecache = "1";
+var $content_limit = "50";
+var $category_limit = "50";
+var $section_limit = "50";
+var $admin_acltoany = "1";
+}
+?>

@@ -1,0 +1,56 @@
+<?php
+class JConfig {
+	var $offline = '0';
+	var $editor = 'jce';
+	var $list_limit = '20';
+	var $helpurl = 'http://help.joomla.org';
+	var $debug = '0';
+	var $debug_lang = '0';
+	var $sef = '1';
+	var $sef_rewrite = '1';
+	var $sef_suffix = '0';
+	var $feed_limit = '10';
+	var $feed_email = 'author';
+	var $secret = 'Xyy4K4ZbdSeOWqX5';
+	var $gzip = '0';
+	var $error_reporting = '-1';
+	var $xmlrpc_server = '0';
+	var $log_path = '/home/alab1/public_html/site2010/logs';
+	var $tmp_path = '/home/alab1/public_html/site2010/tmp';
+	var $live_site = '';
+	var $force_ssl = '0';
+	var $offset = '0';
+	var $caching = '0';
+	var $cachetime = '15';
+	var $cache_handler = 'file';
+	var $memcache_settings = array();
+	var $ftp_enable = '0';
+	var $ftp_host = '127.0.0.1';
+	var $ftp_port = '21';
+	var $ftp_user = 'lucianaviter@yahoo.com.br';
+	var $ftp_pass = 'lucajo0102';
+	var $ftp_root = '';
+	var $dbtype = 'mysql';
+	var $host = 'mysql04.alab.org.br';
+	var $user = 'alab13';
+	var $db = 'alab13';
+	var $dbprefix = 'jos_';
+	var $mailer = 'mail';
+	var $mailfrom = 'alab@alab.org.br';
+	var $fromname = 'ALAB';
+	var $sendmail = '/usr/sbin/sendmail';
+	var $smtpauth = '1';
+	var $smtpuser = 'alab@alab.org.br';
+	var $smtppass = 'w62c11AL';
+	var $smtphost = 'localhost';
+	var $MetaAuthor = '1';
+	var $MetaTitle = '1';
+	var $lifetime = '120';
+	var $session_handler = 'database';
+	var $password = 'al441301';
+	var $sitename = 'ALAB';
+	var $MetaDesc = 'ALAB - Associação de Linguística Aplicada do Brasil';
+	var $MetaKeys = 'ALAB, LA, linguística aplicada, Linguística Aplicada, linguística, Brasil, associação de linguística, estudos da linguagem, linguístas, publicações, linguagem, periódicos, language studies, applied linguistics';
+	var $offline_message = 'Este site está em manutenção. Por favor, retorne mais tarde.';
+}
+?>

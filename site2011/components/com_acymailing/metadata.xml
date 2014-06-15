@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<author>Acyba</author>
+	<authorEmail>dev@acyba.com</authorEmail>
+	<authorUrl>http://www.acyba.com</authorUrl>
+	<creationDate>September 2009</creationDate>
+	<copyright>Copyright (C) 2009 ACYBA SARL - All rights reserved.</copyright>
+	<menu>
+		<options var="view">
+			<option value="user" name="User : subscribe/modify your subscription" msg="This menu item enables your visitors or logged-in users to subscribe/modify their subscription." />
+			<default value="lists" name="Mailing Lists Archive" msg="This menu enables you to display all AcyMailing Mailing Lists on your website in order to see the archive Newsletters" />
+			<option value="archive" name="Mailing List Archive" msg="Display the name and description of the selected List and a listing of Newsletters belonging to this list." />
+		</options>
+	</menu>
+	<state switch="view" default="user">
+		<lists>
+			<name>Mailing Lists Archive</name>
+			<description>This menu enables you to display all AcyMailing Mailing Lists on your website in order to see the archive Newsletters</description>
+		</lists>
+		<user>
+			<name>User : modify your subscription</name>
+			<description>This menu item enables your visitors or logged-in users to subscribe/modify their subscription.</description>
+		</user>
+		<archive>
+			<name>Mailing List Archive</name>
+			<description>Display the name and description of the selected List and a listing of Newsletters belonging to this list.</description>
+			<params addpath="/components/com_acymailing/params">
+				<param name="listid" type="listid" label="List" description="" />
+		 		<param name="show_description" type="radio" default="1" label="Description" description="Show/Hide the List Description">
+		 			<option value="0">Hide</option>
+		 			<option value="1">Show</option>
+		 		</param>
+		 		<param name="show_headings" type="radio" default="1" label="Table Headings" description="Show/Hide the Table Headings">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</param>
+				<param name="show_senddate" type="radio" default="1" label="SendDate Column" description="Show/Hide the SendDate column">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</param>
+				<param name="filter" type="radio" default="1" label="Filter" description="Show/Hide the Filter ability">
+					<option value="0">Hide</option>
+					<option value="1">Show</option>
+				</param>
+			</params>
+		</archive>
+	</state>
+</metadata>
